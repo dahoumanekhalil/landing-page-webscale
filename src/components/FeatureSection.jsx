@@ -1,29 +1,39 @@
+// src/components/FeatureSection.jsx 
 import { features } from "../constants";
 
 const FeatureSection = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+    <section className="relative mt-20 border-b border-neutral-300 dark:border-neutral-800 min-h-[600px] px-4">
+      {/* title */}
       <div className="text-center">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
-          Feature
+        <span className="bg-neutral-100 dark:bg-neutral-900 text-neutral-800 dark:text-[#fbbc05] rounded-full h-6 text-sm font-medium px-3 py-1 uppercase">
+          مميزات الملتقى
         </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
-          Easily build{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-            your code
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-6 lg:mt-12 tracking-wide font-bold">
+          لماذا تختار
+          <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">
+            {" "}WEBSCALE
           </span>
+          ؟
         </h2>
+        <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          ملتقانا الأول يجمع القادة، الخبراء، وأصحاب المؤسسات في يوم تطبيقي
+          يحوّل الذكاء الاصطناعي إلى نتائج عملية مباشرة في التجارة الإلكترونية.
+        </p>
       </div>
-      <div className="flex flex-wrap mt-10 lg:mt-20">
+
+      <div className="flex flex-wrap mt-12 lg:mt-20 gap-y-10">
         {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3">
-            <div className="flex">
-              <div className="flex mx-6 h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
+          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-4">
+            <div className="flex items-start">
+              <div className="flex h-12 w-12 p-3 bg-neutral-100 dark:bg-neutral-500 text-neutral-800 dark:text-[#fbbc05] justify-center items-center rounded-full shadow-md">
                 {feature.icon}
               </div>
-              <div>
-                <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
-                <p className="text-md p-2 mb-20 text-neutral-500">
+              <div className="ml-4">
+                <h5 className="text-xl text-neutral-800 dark:text-neutral-100 font-semibold mb-2">
+                  {feature.text}
+                </h5>
+                <p className="text-md text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -31,7 +41,7 @@ const FeatureSection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

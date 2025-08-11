@@ -1,3 +1,4 @@
+// src/constants/index.jsx 
 import { BotMessageSquare } from "lucide-react";
 import { BatteryCharging } from "lucide-react";
 import { Fingerprint } from "lucide-react";
@@ -19,139 +20,183 @@ export const navItems = [
   { label: "Testimonials", href: "#" },
 ];
 
+
 export const testimonials = [
   {
-    user: "John Doe",
-    company: "Stellar Solutions",
+    user: "أحمد بن علي",
+    company: "مؤسس شركة ناشئة",
     image: user1,
-    text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
+    text: "ملتقى WEBSCALE كان تجربة مميزة... استفدت من الورشات العملية وتعرفت على شركاء جدد في المجال."
   },
   {
-    user: "Jane Smith",
-    company: "Blue Horizon Technologies",
+    user: "ليلى مراد",
+    company: "مديرة مشاريع",
     image: user2,
-    text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
+    text: "أعجبني تنوع المواضيع، خاصة الجلسات المتعلقة بالذكاء الاصطناعي. التنظيم كان ممتاز."
   },
   {
-    user: "David Johnson",
-    company: "Quantum Innovations",
+    user: "سامي يوسف",
+    company: "مطور ويب",
     image: user3,
-    text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
-  },
-  {
-    user: "Ronee Brown",
-    company: "Fusion Dynamics",
-    image: user4,
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
-  },
-  {
-    user: "Michael Wilson",
-    company: "Visionary Creations",
-    image: user5,
-    text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
-  },
-  {
-    user: "Emily Davis",
-    company: "Synergy Systems",
-    image: user6,
-    text: "The team went above and beyond to ensure our project was a success. Their expertise and dedication are unmatched. I look forward to working with them again in the future.",
+    text: "كانت فرصة ذهبية لمقابلة خبراء المجال واكتساب مهارات جديدة يمكن تطبيقها مباشرة في عملي."
   },
 ];
+
 
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    text: "يوم تطبيقي شامل",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "ورش عمل وجلسات تطبيقية مع خبراء لمساعدتك على تحويل الذكاء الاصطناعي إلى نتائج عملية في التجارة الإلكترونية.",
   },
   {
     icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    text: "شبكة علاقات نُخبوية",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "فرصة للقاء أصحاب المؤسسات، المدراء، والخبراء، وبناء شراكات استراتيجية تعزز أعمالك.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    text: "محتوى محلي عالي القيمة",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "دراسات حالة جزائرية قابلة للتطبيق ومحتوى موجه خصيصًا لسياق السوق المحلي.",
   },
   {
     icon: <BatteryCharging />,
-    text: "Real-Time Preview",
+    text: "أدوات وتقنيات حديثة",
     description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+      "التعرف على أحدث أدوات الذكاء الاصطناعي وأتمتة العمليات لزيادة الإنتاجية وتحسين تجربة الزبون.",
   },
   {
     icon: <PlugZap />,
-    text: "Collaboration Tools",
+    text: "فرص تطوير الأعمال",
     description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+      "عروض خاصة، ترقية العضوية في WEBSCALE، والوصول إلى موارد إضافية بعد الحدث.",
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    text: "تحليلات ومؤشرات أداء",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "متابعة أثر حضورك عبر تقارير مخصصة ومؤشرات أداء تساعدك على قياس التطور بعد الملتقى.",
   },
 ];
+
+// مستويات الرعاية والرعاة
+export const sponsors = [
+  {
+    level: "Premium Sponsor",
+    color: "from-yellow-400 to-yellow-600",
+    name: "شركة الذكاء المتقدم",
+    logo: "/assets/gold.png", // ضع رابط أو استبدل بصورة الشعار
+    description: "الراعي الرسمي الحصري للملتقى، بخبرة طويلة في حلول الذكاء الاصطناعي للأعمال.",
+    benefits: [
+      "كلمة افتتاحية لمدة 10 دقائق",
+      "شعار على جميع الحقائب والأساور",
+      "مساحة عرض خاصة",
+      "10 بطاقات VIP",
+    ],
+  },
+  {
+    level: "Platinum Sponsor",
+    color: "from-gray-300 to-gray-500",
+    name: "حلول التقنية الحديثة",
+    logo: "/assets/logo.png",
+    description: "شريك رقمي للملتقى بخدمات برمجية متقدمة للمؤسسات.",
+    benefits: [
+      "شعار على البطاقات الرسمية",
+      "مساحة عرض مشتركة",
+      "6 بطاقات VIP",
+    ],
+  },
+  {
+    level: "Gold Sponsor",
+    color: "from-yellow-200 to-yellow-400",
+    name: "مؤسسة التجارة الذكية",
+    logo: "/assets/logo.png",
+    description: "راعي ذهبي يقدم حلول تجارة إلكترونية مبتكرة.",
+    benefits: [
+      "شعار على المواد الإعلانية",
+      "مساحة عرض مشتركة",
+      "4 بطاقات VIP",
+    ],
+  },
+  {
+    level: "Silver Sponsor",
+    color: "from-gray-200 to-gray-400",
+    name: "شركة الدفع الرقمي",
+    logo: "/assets/logo.png",
+    description: "راعي فضي بخدمات دفع إلكتروني موثوقة.",
+    benefits: [
+      "شعار على البطاقات",
+      "مساحة عرض مشتركة",
+      "1 بطاقة VIP",
+    ],
+  },
+];
+
+
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
+    title: "التسجيل السريع",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "احجز مكانك بسهولة عبر النموذج الإلكتروني واحصل على تأكيد فوري عبر البريد أو الواتساب.",
   },
   {
-    title: "Review code without worry",
+    title: "استقبال حقيبة الملتقى",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "عند وصولك ستحصل على حقيبة تحتوي على دليل الفعاليات، مواد تدريبية، وهدايا حصرية.",
   },
   {
-    title: "AI Assistance to reduce time",
+    title: "المشاركة في الورش والجلسات",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "انضم إلى ورش العمل التطبيقية والجلسات النقاشية مع خبراء محليين ودوليين.",
   },
   {
-    title: "Share work in minutes",
+    title: "بناء شبكة علاقات",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "تواصل مع أصحاب المؤسسات، رواد الأعمال، والخبراء لبناء شراكات استراتيجية.",
+  },
+  {
+    title: "الحصول على الشهادات والموارد",
+    description:
+      "استلم شهادة مشاركة مع إمكانية الوصول إلى محتوى ومواد تدريبية بعد الحدث.",
   },
 ];
 
+
 export const pricingOptions = [
   {
-    title: "Free",
-    price: "$0",
+    title: "تذكرة أساسية",
+    price: "2000 دج",
     features: [
-      "Private board sharing",
-      "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
+      "حضور جميع الجلسات الرئيسية",
+      "شهادة مشاركة رقمية",
+      "حقيبة الملتقى",
     ],
   },
   {
-    title: "Pro",
-    price: "$10",
+    title: "تذكرة VIP",
+    price: "5000 دج",
     features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
+      "جميع مزايا التذكرة الأساسية",
+      "مقاعد مميزة في الصفوف الأمامية",
+      "دعوة لحفل التعارف مع المتحدثين",
+      "وصول إلى مواد تدريبية إضافية بعد الحدث",
     ],
   },
   {
-    title: "Enterprise",
-    price: "$200",
+    title: "تذكرة جماعية",
+    price: "15000 دج",
     features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
+      "5 تذاكر أساسية بسعر مخفض",
+      "حجز مسبق لمقاعد مخصصة",
+      "إمكانية وضع شعار الشركة على لوحة الشركاء",
     ],
   },
 ];
+
 
 export const resourcesLinks = [
   { href: "#", text: "Getting Started" },

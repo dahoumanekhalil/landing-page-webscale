@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
 const Footer = () => {
   return (
