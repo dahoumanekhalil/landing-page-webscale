@@ -3,17 +3,14 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
-import Workflow from "./components/Workflow";
 import Footer from "./components/Footer";
-// import Pricing from "./components/Pricing";
-// import Testimonials from "./components/Testimonials";
-import RegisterForm from "./components/RegisterForm";
 import Agenda from "./components/Agenda";
 import Sponsors from "./components/Sponsors";
 import AboutWebscale from "./components/AboutWebscale";
 import AboutEvent from "./components/AboutEvent";
 import UnifiedRegistrationForm from "./components/UnifiedRegistrationForm";
-import PartnersMarquee from "./components/PartnersMarquee";
+// import PartnersMarquee from "./components/PartnersMarquee";
+import LogosCarousel from "./components/PartnersMarquee";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -37,11 +34,8 @@ const App = () => {
         <Sponsors/> 
         <FeatureSection />
         <UnifiedRegistrationForm mode="inline"/>
-        <PartnersMarquee/>
-        {/* <RegisterForm /> */}
-        {/* <Workflow /> */}
-        {/* <Pricing /> */}
-        {/* <Testimonials /> */}
+        {/* <PartnersMarquee/> */}
+        <LogosCarousel/>
         <Footer />
       </div>
     </div>
