@@ -5,19 +5,25 @@ import { Fingerprint } from "lucide-react";
 import { ShieldHalf } from "lucide-react";
 import { PlugZap } from "lucide-react";
 import { GlobeLock } from "lucide-react";
+import premiumLogo from "../assets/sponsors/premium.png";
+import goldLogo from "../assets/sponsors/gold.png";
+import platinumLogo from "../assets/sponsors/platinum.png";
+import silverLogo from "../assets/sponsors/silver.png";
+import { Clock, Mic, Handshake, Presentation, Users, Coffee, Wrench, MessageSquare } from "lucide-react";
+
 
 import user1 from "../assets/profile-pictures/user1.jpg";
 import user2 from "../assets/profile-pictures/user2.jpg";
 import user3 from "../assets/profile-pictures/user3.jpg";
-import user4 from "../assets/profile-pictures/user4.jpg";
-import user5 from "../assets/profile-pictures/user5.jpg";
-import user6 from "../assets/profile-pictures/user6.jpg";
+
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
+  { label: "الرئيسية", href: "#hero" },
+  { label: "البرنامج", href: "#agenda" },
+  { label: "عن الملتقى	", href: "#about-event" },
+  // { label: "المتحدثون", href: "#speakers" }, 
+  { label: "التسجيل", href: "#register" },
+  // { label: "", href: "#contact" },
 ];
 
 
@@ -83,57 +89,87 @@ export const features = [
 ];
 
 // مستويات الرعاية والرعاة
+// src/constants/index.jsx
+
 export const sponsors = [
   {
-    level: "Premium Sponsor",
+    level: "الراعي الماسي – PREMIUM SPONSOR",
     color: "from-yellow-400 to-yellow-600",
-    name: "شركة الذكاء المتقدم",
-    logo: "/assets/gold.png", // ضع رابط أو استبدل بصورة الشعار
-    description: "الراعي الرسمي الحصري للملتقى، بخبرة طويلة في حلول الذكاء الاصطناعي للأعمال.",
-    benefits: [
-      "كلمة افتتاحية لمدة 10 دقائق",
-      "شعار على جميع الحقائب والأساور",
-      "مساحة عرض خاصة",
-      "10 بطاقات VIP",
-    ],
+    name: "الراعي الرسمي الحصري",
+    logo: premiumLogo,
+    description:
+      "الراعي الرسمي الحصري للملتقى، بخبرة واسعة في حلول الذكاء الاصطناعي للأعمال.",
+    // benefits: [
+    //   "ظهور شعار الراعي حصريًا على اللوحة الإعلانية الرئيسية الخارجية للحدث.",
+    //   "شعار WEBSCALE على جميع الحقائب والأساور الموزعة للحضور.",
+    //   "ظهور الشعار على جميع البطاقات الرسمية المتعلقة بالحدث بنسبة 30%.",
+    //   "صفحة كاملة مخصصة للراعي في منتصف كتيب التوصيات والمخرجات.",
+    //   "ظهور الشعار بشكل فردي خلال 30% من وقت عرض الشعارات في كل محاضرة.",
+    //   "10 بطاقات VIP مخصصة.",
+    //   "كلمة افتتاحية لمدة 10 دقائق خلال الجلسة الافتتاحية.",
+    //   "ظهور الشعار بوضوح في أعلى مساحة الـ MATCHMAKING.",
+    //   "تغطية إعلامية خاصة ومشتركة.",
+    //   "تقرير مفصل عن الأثر الرقمي والجماهيري.",
+    //   "إمكانية تقديم أي اقتراحات لتوسيع استراتيجية الراعي في الحدث حسب الاتفاق.",
+    //   "شهادة شكر رسمية.",
+    // ],
   },
   {
-    level: "Platinum Sponsor",
+    level: "الراعي البلاتيني – PLATINUM SPONSOR",
     color: "from-gray-300 to-gray-500",
-    name: "حلول التقنية الحديثة",
-    logo: "/assets/logo.png",
-    description: "شريك رقمي للملتقى بخدمات برمجية متقدمة للمؤسسات.",
-    benefits: [
-      "شعار على البطاقات الرسمية",
-      "مساحة عرض مشتركة",
-      "6 بطاقات VIP",
-    ],
+    name: "شريك رقمي مميز",
+    logo: goldLogo,
+    description:
+      "شريك رقمي بخدمات برمجية متقدمة للمؤسسات، يساهم في دعم البيئة الرقمية.",
+    // benefits: [
+    //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 20%.",
+    //   "صفحة نصف مخصصة للراعي في النصف الأول من كتيب التوصيات والمخرجات.",
+    //   "ظهور الشعار بنسبة 20% خلال عرض الشعارات في المحاضرات.",
+    //   "6 بطاقات VIP.",
+    //   "ظهور الشعار في مساحة MATCHMAKING بنسبة 20%.",
+    //   "تغطية إعلامية خاصة ومشتركة.",
+    //   "تقرير تفصيلي عن الأثر الرقمي والجماهيري.",
+    //   "شهادة شكر رسمية.",
+    // ],
   },
   {
-    level: "Gold Sponsor",
+    level: "الراعي الذهبي – GOLD SPONSOR",
     color: "from-yellow-200 to-yellow-400",
-    name: "مؤسسة التجارة الذكية",
-    logo: "/assets/logo.png",
-    description: "راعي ذهبي يقدم حلول تجارة إلكترونية مبتكرة.",
-    benefits: [
-      "شعار على المواد الإعلانية",
-      "مساحة عرض مشتركة",
-      "4 بطاقات VIP",
-    ],
+    name: "داعم الحلول التجارية",
+    logo: platinumLogo,
+    description:
+      "راعي ذهبي يقدم حلول تجارة إلكترونية مبتكرة تعزز من نمو السوق المحلي.",
+    // benefits: [
+    //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 18%.",
+    //   "صفحة ثلث مخصصة للراعي في كتيب التوصيات والمخرجات.",
+    //   "ظهور الشعار بنسبة 18% خلال عرض الشعارات في المحاضرات.",
+    //   "4 بطاقات VIP.",
+    //   "ظهور الشعار في مساحة MATCHMAKING بنسبة 18%.",
+    //   "تغطية إعلامية خاصة ومشتركة.",
+    //   "تقرير تفصيلي عن الأثر الرقمي والجماهيري.",
+    //   "شهادة شكر رسمية.",
+    // ],
   },
   {
-    level: "Silver Sponsor",
+    level: "الراعي الفضي – SILVER SPONSOR",
     color: "from-gray-200 to-gray-400",
-    name: "شركة الدفع الرقمي",
-    logo: "/assets/logo.png",
-    description: "راعي فضي بخدمات دفع إلكتروني موثوقة.",
-    benefits: [
-      "شعار على البطاقات",
-      "مساحة عرض مشتركة",
-      "1 بطاقة VIP",
-    ],
+    name: "شريك الدفع الرقمي",
+    logo: silverLogo,
+    description:
+      "راعي فضي بخدمات دفع إلكتروني موثوقة تدعم التحول الرقمي.",
+    // benefits: [
+    //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 32%.",
+    //   "صفحة ربع مخصصة للراعي في كتيب التوصيات والمخرجات.",
+    //   "ظهور الشعار بنسبة 32% خلال عرض الشعارات في المحاضرات.",
+    //   "بطاقة VIP واحدة.",
+    //   "ظهور الشعار في مساحة MATCHMAKING بنسبة 32%.",
+    //   "تغطية إعلامية خاصة ومشتركة.",
+    //   "تقرير تفصيلي عن الأثر الرقمي والجماهيري.",
+    //   "شهادة شكر رسمية.",
+    // ],
   },
 ];
+
 
 
 
@@ -198,26 +234,100 @@ export const pricingOptions = [
 ];
 
 
+// روابط الموارد
 export const resourcesLinks = [
-  { href: "#", text: "Getting Started" },
-  { href: "#", text: "Documentation" },
-  { href: "#", text: "Tutorials" },
-  { href: "#", text: "API Reference" },
-  { href: "#", text: "Community Forums" },
+  { href: "#about-event", text: "عن الملتقى" },
+  { href: "#agenda", text: "جدول الفعاليات" },
+  { href: "#goals", text: "الاهداف" },
+  { href: "#sponsors", text: "الرعاة" },
+  // { href: "#faq", text: "الأسئلة الشائعة" },
 ];
 
+// روابط المنصة
 export const platformLinks = [
-  { href: "#", text: "Features" },
-  { href: "#", text: "Supported Devices" },
-  { href: "#", text: "System Requirements" },
-  { href: "#", text: "Downloads" },
-  { href: "#", text: "Release Notes" },
+  { href: "#register", text: "تمويل الحدث" },
+  { href: "#sponsors", text: "فرص الرعاية" },
+  { href: "https://maps.app.goo.gl/PVaNURZtnT4WKxTX8", text: "موقع الملتقى" },
+  // { href: "#gallery", text: "معرض الصور" },
+  { href: "https://www.webscale.pro/", text: "اتصل بنا" },
 ];
 
+// روابط المجتمع
 export const communityLinks = [
-  { href: "#", text: "Events" },
-  { href: "#", text: "Meetups" },
-  { href: "#", text: "Conferences" },
-  { href: "#", text: "Hackathons" },
-  { href: "#", text: "Jobs" },
+  { href: "https://www.webscale.pro/", text: "الموقع الالكتروني" },
+  { href: "https://www.facebook.com/share/15utdJSobi/", text: "فيسبوك" },
+  { href: "https://www.instagram.com/webscale.pro?igsh=MXg0OXRjOXk5bGExag==", text: "إنستغرام" },
+  { href: "https://www.linkedin.com/company/webscalepro/", text: "لينكدإن" },
+  { href: "https://youtube.com/@webscale-pro?si=KWRMamO8XO628NlY", text: "يوتيوب" },
+];
+
+
+
+export const agenda = [
+  {
+    time: "08:00 - 09:00",
+    title: "الاستقبال",
+    description: "استقبال المشاركين وتوزيع بطاقات الدخول والمواد التعريفية.",
+    icon: <Handshake className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "09:00 - 09:15",
+    title: "كلمة افتتاحية",
+    description: "كلمة ترحيبية وتعريف بالملتقى وأهدافه.",
+    icon: <Mic className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "09:15 - 09:45",
+    title: "كلمة الرعاة",
+    description: "عرض من الرعاة الرسميين للملتقى حول مساهماتهم ودعمهم.",
+    icon: <Users className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "09:45 - 10:30",
+    title: "محاضرة 1: دراسة حالة",
+    description: "عرض دراسة حالة ملهمة من أحد المشاريع الرائدة.",
+    icon: <Presentation className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "10:30 - 11:15",
+    title: "محاضرة 2: دراسة حالة 2",
+    description: "دراسة حالة ثانية تركز على الابتكار في الأعمال.",
+    icon: <Presentation className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "11:15 - 12:30",
+    title: "محاضرات فردية",
+    description: "محاضرات قصيرة يقدمها خبراء في مجالات متنوعة.",
+    icon: <MessageSquare className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "12:30 - 13:30",
+    title: "استراحة",
+    description: "استراحة غداء وفرصة للتعارف بين المشاركين.",
+    icon: <Coffee className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "13:30 - 14:15",
+    title: "ورشة عمل تطبيقية",
+    description: "تدريب عملي على أدوات وحلول تكنولوجية حديثة.",
+    icon: <Wrench className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "14:15 - 15:00",
+    title: "محاضرة 3",
+    description: "جلسة تفاعلية تركز على استراتيجيات نمو المؤسسات.",
+    icon: <Presentation className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "15:00 - 16:30",
+    title: "محاضرات فردية ومداخلات",
+    description: "مداخلات مفتوحة مع الحضور وخبراء الملتقى.",
+    icon: <MessageSquare className="text-[#fbbc05]" size={24} />
+  },
+  {
+    time: "16:30 - 18:00",
+    title: "تعارف وتشبيك علاقات",
+    description: "جلسة مفتوحة للتعارف وبناء شراكات بين الحاضرين.",
+    icon: <Handshake className="text-[#fbbc05]" size={24} />
+  }
 ];

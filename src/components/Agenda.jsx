@@ -1,5 +1,5 @@
 // src/components/Agenda.jsx
-import { Clock, Users, Mic } from "lucide-react";
+import { agenda } from "../constants";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
@@ -9,57 +9,34 @@ const Agenda = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const agendaItems = [
-    {
-      time: "09:00 - 09:30",
-      title: "الافتتاح الرسمي",
-      description: "كلمة ترحيبية من منظمي ملتقى WEBSCALE وممثل وزارة المؤسسات الناشئة.",
-      icon: <Mic className="text-primary" size={24} />,
-    },
-    {
-      time: "09:30 - 10:30",
-      title: "محاضرات فردية",
-      description: "مداخلات قصيرة من خبراء ومسيرين حول أحدث تطبيقات الذكاء الاصطناعي في التجارة الإلكترونية.",
-      icon: <Users className="text-primary" size={24} />,
-    },
-    {
-      time: "10:30 - 12:00",
-      title: "دراسات حالة جزائرية",
-      description: "عرض تجارب عملية لأفضل استخدامات أدوات AI في السوق المحلي.",
-      icon: <Clock className="text-primary" size={24} />,
-    },
-    {
-      time: "13:30 - 15:00",
-      title: "أجنحة عرض تقنية",
-      description: "استكشاف أحدث الحلول التقنية والتطبيقات الموجهة للتجار الإلكترونيين.",
-      icon: <Users className="text-primary" size={24} />,
-    },
-    {
-      time: "15:00 - 16:00",
-      title: "جلسة ختامية",
-      description: "إعلان التوصيات النهائية وتوزيع شهادات المشاركة.",
-      icon: <Mic className="text-primary" size={24} />,
-    },
-  ];
-
   return (
-    <section id="agenda" className="py-10 dark:bg-neutral-900 px-4">
+    <section id="agenda"      dir="rtl"
+    className="py-16 px-4 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         <h2
-          className="text-3xl sm:text-5xl text-neutral-800 dark:text-neutral-100 font-bold text-center mb-12"
+          className="text-3xl sm:text-5xl font-bold text-center mb-12 text-neutral-800 dark:text-neutral-100"
           data-aos="fade-up"
         >
           جدول الفعاليات
         </h2>
-        <div className="space-y-8">
-          {agendaItems.map((item, index) => (
+
+        <div className="relative border-r-4 border-[#fbbc05] dark:border-[#fbbc05]/70 pr-6">
+          {agenda.map((item, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-6 bg-white dark:bg-neutral-800 rounded-lg shadow hover:shadow-lg transition"
+              className="mb-8 flex items-start gap-4"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="flex-shrink-0">{item.icon}</div>
+              {/* النقطة في التايملاين */}
+              {/* <div className="absolute right-[-14px] mt-2 w-6 h-6 rounded-full bg-[#fbbc05] border-4 border-white dark:border-neutral-900"></div> */}
+
+              {/* الأيقونة */}
+              <div className="flex-shrink-0 p-3 bg-[#fbbc05]/20 dark:bg-[#fbbc05]/10 rounded-full">
+                {item.icon}
+              </div>
+
+              {/* المحتوى */}
               <div>
                 <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
                   {item.time} — {item.title}

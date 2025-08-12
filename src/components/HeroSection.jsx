@@ -17,6 +17,7 @@ const HeroSection = () => {
 
   return (
     <section
+    dir="rtl"
       className="flex flex-col items-center mt-6 lg:mt-5 text-center px-4 bg-white dark:bg-neutral-900 transition-colors duration-300"
       id="hero"
     >
@@ -27,10 +28,11 @@ const HeroSection = () => {
       >
         ملتقى
         <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">
-          {" "}WEBSCALE
+          {" "}WEBSCALE 
         </span>
+        الأول
         <br className="hidden sm:block" />
-        مستقبل الويب بين يديك
+        استخدام الذكاء الاصطناعي في التجارة الإلكترونية
       </h1>
 
       {/* date and place */}
@@ -81,7 +83,7 @@ const HeroSection = () => {
         data-aos="fade-up"
         data-aos-delay="800"
       >
-        <div className="w-full lg:w-1/2">
+        {/* <div className="w-full lg:w-1/2">
           <video
             autoPlay
             loop
@@ -94,8 +96,8 @@ const HeroSection = () => {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             لقطات من ورش العمل السابقة
           </p>
-        </div>
-        <div className="w-full lg:w-1/2">
+        </div> */}
+        {/* <div className="w-full lg:w-1/2">
           <video
             autoPlay
             loop
@@ -108,7 +110,7 @@ const HeroSection = () => {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             لقاءات مع خبراء ومتحدثين عالميين
           </p>
-        </div>
+        </div> */}
       </div>
 
       <RegistrationModal

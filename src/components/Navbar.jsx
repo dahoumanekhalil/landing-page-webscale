@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
@@ -8,7 +7,6 @@ const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // take mode (dark mode or light mode ) from local storage
   useEffect(() => {
     const savedMode = localStorage.getItem("theme");
     if (savedMode === "dark") {
@@ -36,17 +34,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-300 dark:border-neutral-700 transition-colors
-      ${darkMode ? "bg-darkBg text-white" : "bg-white/70 text-black"}`}
+      className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b transition-colors duration-300
+                 bg-white/80 border-neutral-300 text-neutral-800
+                 dark:bg-neutral-900/80 dark:border-neutral-700 dark:text-neutral-100"
     >
       <div className="container px-4 mx-auto relative flex justify-between items-center">
         
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
-          <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-          <span className="text-xl font-bold tracking-tight">
-            ملتقى WEBSCALE
-          </span>
+              <a
+                href="#hero"
+                className="flex items-center flex-shrink-0 hover:text-[#FABC05] transition-colors duration-200 font-medium"
+              >
+          <img className="h-10 w-10 mr-2 rounded-md" src={logo} alt="Logo" />
+          <span className="text-xl font-bold tracking-tight">ملتقى WEBSCALE</span>
+                {/* {item.label} */}
+              </a>
         </div>
 
         {/* Desktop Menu */}
@@ -55,7 +58,7 @@ const Navbar = () => {
             <li key={index}>
               <a
                 href={item.href}
-                className="hover:text-primary transition-colors"
+                className="hover:text-[#FABC05] transition-colors duration-200 font-medium"
               >
                 {item.label}
               </a>
@@ -67,27 +70,44 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
           <a
             href="#register"
-            className="py-2 px-3 border rounded-md hover:bg-gray-200 dark:hover:bg-orange-900 transition"
+            className="py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 
+                       bg-gradient-to-r from-[#FABC05]/90 to-[#977b25]/90 
+                       text-neutral-100 dark:text-neutral-100 font-medium
+                       hover:from-[#FABC05] hover:to-[#977b25] 
+                       transition-colors duration-200 shadow-sm"
           >
             تسجيل الحضور
           </a>
+
           <a
             href="#about"
-            className="bg-gradient-to-r from-primary to-[#715a1a]  py-2 px-3 rounded-md hover:opacity-90 transition"
+            className="py-2 px-4 rounded-md bg-gradient-to-r bg-neutral-200 text-neutral-700 dark:text-[#FABC05] dark:bg-neutral-600 
+                        font-medium shadow-sm
+                       hover:opacity-90 transition-opacity"
           >
             تفاصيل الملتقى
           </a>
+
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full border hover:bg-neutral-200 hover:scale-110 dark:hover:bg-neutral-700 transition"
+            className="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 
+                       hover:bg-neutral-100 dark:hover:bg-neutral-800 
+                       transition-all hover:scale-110"
           >
-            {darkMode ? <Sun size={18} className="text-yellow-400 hover:text-yellow-400" /> : <Moon size={18} />}
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-400" />
+            ) : (
+              <Moon size={18} className="text-gray-700" />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <button onClick={toggleNavbar}>
+          <button
+            onClick={toggleNavbar}
+            className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition"
+          >
             {mobileDrawerOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -96,14 +116,15 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       {mobileDrawerOpen && (
         <div
-          className={`lg:hidden p-6 flex flex-col items-center space-y-6 transition-colors
-            ${darkMode ? "bg-darkBg text-white" : "bg-white text-black"}`}
+          className="lg:hidden p-6 flex flex-col items-center space-y-6 
+                     bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 
+                     transition-colors duration-300 border-t border-neutral-300 dark:border-neutral-700"
         >
           {navItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="hover:text-primary transition"
+              className="hover:text-[#FABC05] transition-colors"
               onClick={() => setMobileDrawerOpen(false)}
             >
               {item.label}
@@ -111,23 +132,31 @@ const Navbar = () => {
           ))}
           <a
             href="#register"
-            className="py-2 px-3 border rounded-md"
+            className="py-2 px-4 rounded-md bg-gradient-to-r from-[#FABC05] to-[#977b25] 
+                       text-white font-medium shadow-sm hover:opacity-90 transition"
             onClick={() => setMobileDrawerOpen(false)}
           >
             تسجيل الحضور
           </a>
           <a
             href="#about"
-            className="py-2 px-3 rounded-md bg-gradient-to-r from-primary to-[#715a1a] text-white"
+            className="py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-600 
+                       text-neutral-900 dark:text-neutral-100 font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
             onClick={() => setMobileDrawerOpen(false)}
           >
             تفاصيل الملتقى
           </a>
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full border hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+            className="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 
+                       hover:bg-neutral-100 dark:hover:bg-neutral-800 
+                       transition-all hover:scale-110"
           >
-            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} />}
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-400" />
+            ) : (
+              <Moon size={18} className="text-gray-700" />
+            )}
           </button>
         </div>
       )}

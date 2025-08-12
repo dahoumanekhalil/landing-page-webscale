@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL";
+const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
 const RegistrationModal = ({ isOpen, onClose }) => {
   const [status, setStatus] = useState("idle"); 

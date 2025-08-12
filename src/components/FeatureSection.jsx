@@ -6,9 +6,6 @@ const FeatureSection = () => {
     <section className="relative mt-20 border-b border-neutral-300 dark:border-neutral-800 min-h-[600px] px-4">
       {/* title */}
       <div className="text-center">
-        <span className="bg-neutral-100 dark:bg-neutral-900 text-neutral-800 dark:text-[#fbbc05] rounded-full h-6 text-sm font-medium px-3 py-1 uppercase">
-          مميزات الملتقى
-        </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-6 lg:mt-12 tracking-wide font-bold">
           لماذا تختار
           <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">

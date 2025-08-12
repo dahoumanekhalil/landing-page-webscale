@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import RegisterForm from "./components/RegisterForm";
 import Agenda from "./components/Agenda";
 import Sponsors from "./components/Sponsors";
+import AboutWebscale from "./components/AboutWebscale";
+import AboutEvent from "./components/AboutEvent";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,6 +29,8 @@ const App = () => {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <HeroSection />
+        <AboutWebscale />
+        <AboutEvent/>
         <Agenda /> 
         <Sponsors/> 
         <FeatureSection />
