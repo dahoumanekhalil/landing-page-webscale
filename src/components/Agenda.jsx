@@ -11,7 +11,7 @@ const Agenda = () => {
 
   return (
     <section id="agenda"      dir="rtl"
-    className="py-16 px-4 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
+    className="py-16 px-4 dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         <h2
           className="text-3xl sm:text-5xl font-bold text-center mb-12 text-neutral-800 dark:text-neutral-100"

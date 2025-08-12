@@ -15,7 +15,7 @@ const Sponsors = () => {
     <section
   id="sponsors"
   dir="rtl"
-  className="py-20 bg-neutral-50 dark:bg-neutral-900"
+  className="py-20 dark:bg-neutral-900"
 >
   <div className="max-w-6xl mx-auto px-4">
     <h2
@@ -28,10 +28,10 @@ const Sponsors = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       {sponsors.map((sponsor, index) => (
         <div
-          key={index}
-          className={`relative flex flex-col items-center text-center rounded-xl shadow-lg border dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:scale-[1.03] transition-transform duration-300`}
-          data-aos="fade-up"
-          data-aos-delay={index * 150}
+        key={index}
+        className={`relative flex flex-col items-center text-center rounded-2xl shadow-lg border dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-2xl hover:scale-[1.03] transition-all duration-300`}
+        data-aos="fade-up"
+        data-aos-delay={index * 150}
         >
           {/* شريط علوي بلون الفئة */}
           <div
@@ -57,21 +57,29 @@ const Sponsors = () => {
           </div>
 
           {/* الوصف */}
-          <p className="px-4 mt-4 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          {/* <p className="px-4 mt-4 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
             {sponsor.description}
-          </p>
+          </p> */}
 
           {/* قائمة المزايا - اختيارية */}
-          {/* 
+          
           <ul className="text-sm text-neutral-700 dark:text-neutral-300 space-y-2 w-full border-t mt-4 pt-4 px-4">
-            {sponsor.benefits.map((benefit, i) => (
-              <li key={i} className="flex items-center gap-2 justify-start">
-                <CheckCircle size={16} className="text-green-500" />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-          */}
+  {sponsor.benefits.map((benefit, i) => (
+    <li
+      key={i}
+      className="flex items-start gap-2 justify-start hover:translate-x-1 transition-transform duration-200"
+    >
+      <span
+        className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-gradient-to-r ${sponsor.color} flex items-center justify-center shadow-md`}
+      >
+        <CheckCircle size={14} className="text-white" />
+      </span>
+      <span className="leading-snug">{benefit}</span>
+    </li>
+  ))}
+</ul>
+
+         
         </div>
       ))}
     </div>
