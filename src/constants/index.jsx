@@ -93,12 +93,14 @@ export const features = [
 
 export const sponsors = [
   {
-    level: "الراعي الماسي – PREMIUM SPONSOR",
+    level: "راعي الماسي – PREMIUM SPONSOR",
+    // color: "from-yellow-400 to-yellow-600",
     color: "from-yellow-400 to-yellow-600",
+    // color: "from-[#E5E4E2] to-[#E5E4E2]",
     name: "الراعي الرسمي الحصري",
     logo: premiumLogo,
-    description:
-      "الراعي الرسمي الحصري للملتقى، بخبرة واسعة في حلول الذكاء الاصطناعي للأعمال.",
+    description:""
+      // "الراعي الرسمي الحصري للملتقى، بخبرة واسعة في حلول الذكاء الاصطناعي للأعمال.",
     // benefits: [
     //   "ظهور شعار الراعي حصريًا على اللوحة الإعلانية الرئيسية الخارجية للحدث.",
     //   "شعار WEBSCALE على جميع الحقائب والأساور الموزعة للحضور.",
@@ -115,12 +117,13 @@ export const sponsors = [
     // ],
   },
   {
-    level: "الراعي البلاتيني – PLATINUM SPONSOR",
+    level: "2 رعاة بلاتيني – PLATINUM SPONSOR",
     color: "from-gray-300 to-gray-500",
+    // color: "from-[#E5E4E2] to-[#E5E4E2]",
     name: "شريك رقمي مميز",
     logo: goldLogo,
-    description:
-      "شريك رقمي بخدمات برمجية متقدمة للمؤسسات، يساهم في دعم البيئة الرقمية.",
+    description:""
+      // "شريك رقمي بخدمات برمجية متقدمة للمؤسسات، يساهم في دعم البيئة الرقمية.",
     // benefits: [
     //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 20%.",
     //   "صفحة نصف مخصصة للراعي في النصف الأول من كتيب التوصيات والمخرجات.",
@@ -133,12 +136,13 @@ export const sponsors = [
     // ],
   },
   {
-    level: "الراعي الذهبي – GOLD SPONSOR",
+    level: "3 رعاة ذهبي – GOLD SPONSOR",
     color: "from-yellow-200 to-yellow-400",
+    // color: "from-[#FFD700] to-[#FFD700]",
     name: "داعم الحلول التجارية",
     logo: platinumLogo,
-    description:
-      "راعي ذهبي يقدم حلول تجارة إلكترونية مبتكرة تعزز من نمو السوق المحلي.",
+    description:""
+      // "راعي ذهبي يقدم حلول تجارة إلكترونية مبتكرة تعزز من نمو السوق المحلي.",
     // benefits: [
     //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 18%.",
     //   "صفحة ثلث مخصصة للراعي في كتيب التوصيات والمخرجات.",
@@ -151,12 +155,13 @@ export const sponsors = [
     // ],
   },
   {
-    level: "الراعي الفضي – SILVER SPONSOR",
+    level: "رعاة الفضي – SILVER SPONSOR",
     color: "from-gray-200 to-gray-400",
+    // color: "from-[#C0C0C0] to-[#C0C0C0]",
     name: "شريك الدفع الرقمي",
     logo: silverLogo,
-    description:
-      "راعي فضي بخدمات دفع إلكتروني موثوقة تدعم التحول الرقمي.",
+    description:""
+      // "راعي فضي بخدمات دفع إلكتروني موثوقة تدعم التحول الرقمي.",
     // benefits: [
     //   "ظهور الشعار على جميع البطاقات الرسمية بنسبة 32%.",
     //   "صفحة ربع مخصصة للراعي في كتيب التوصيات والمخرجات.",

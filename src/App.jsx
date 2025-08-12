@@ -12,6 +12,8 @@ import Agenda from "./components/Agenda";
 import Sponsors from "./components/Sponsors";
 import AboutWebscale from "./components/AboutWebscale";
 import AboutEvent from "./components/AboutEvent";
+import UnifiedRegistrationForm from "./components/UnifiedRegistrationForm";
+import PartnersMarquee from "./components/PartnersMarquee";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,8 +36,10 @@ const App = () => {
         <Agenda /> 
         <Sponsors/> 
         <FeatureSection />
-        <RegisterForm />
-        <Workflow />
+        <UnifiedRegistrationForm mode="inline"/>
+        <PartnersMarquee/>
+        {/* <RegisterForm /> */}
+        {/* <Workflow /> */}
         {/* <Pricing /> */}
         {/* <Testimonials /> */}
         <Footer />

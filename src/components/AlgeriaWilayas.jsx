@@ -15,10 +15,10 @@ const wilayas = [
 export default function AlgeriaWilayas({ value, onChange,name }) {
   return (
     <Select onValueChange={onChange} value={value} name={name}>
-      <SelectTrigger className="w-full text-right">
+      <SelectTrigger dir="rtl" className="w-full text-right">
         <SelectValue placeholder="اختر الولاية" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent dir="rtl">
         {wilayas.map((w) => (
           <SelectItem key={w} value={w}>
             {w}

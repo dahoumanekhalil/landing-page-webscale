@@ -17,7 +17,7 @@ const Agenda = () => {
           className="text-3xl sm:text-5xl font-bold text-center mb-12 text-neutral-800 dark:text-neutral-100"
           data-aos="fade-up"
         >
-          جدول الفعاليات
+          جدول الفعاليات المقترح
         </h2>
 
         <div className="relative border-r-4 border-[#fbbc05] dark:border-[#fbbc05]/70 pr-6">

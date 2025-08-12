@@ -3,15 +3,15 @@ import { features } from "../constants";
 
 const FeatureSection = () => {
   return (
-    <section className="relative mt-20 border-b border-neutral-300 dark:border-neutral-800 min-h-[600px] px-4">
+    <section dir="rtl" className="relative mt-20 border-b border-neutral-300 dark:border-neutral-800 min-h-[600px] px-4">
       {/* title */}
       <div className="text-center">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-6 lg:mt-12 tracking-wide font-bold">
-          لماذا تختار
+          لماذا ترعى
           <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">
-            {" "}WEBSCALE
+            {" "}الحدث؟
           </span>
-          ؟
+          
         </h2>
         <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
           ملتقانا الأول يجمع القادة، الخبراء، وأصحاب المؤسسات في يوم تطبيقي
@@ -26,7 +26,7 @@ const FeatureSection = () => {
               <div className="flex h-12 w-12 p-3 bg-neutral-100 dark:bg-neutral-500 text-neutral-800 dark:text-[#fbbc05] justify-center items-center rounded-full shadow-md">
                 {feature.icon}
               </div>
-              <div className="ml-4">
+              <div className="mr-4">
                 <h5 className="text-xl text-neutral-800 dark:text-neutral-100 font-semibold mb-2">
                   {feature.text}
                 </h5>
