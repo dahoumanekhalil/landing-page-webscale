@@ -5,7 +5,7 @@ import { scrollToSection } from "../../utils/scroll";
 const Hero = () => {
   return (
     <section
-      id="top"
+      id="hero"
       dir="rtl"
       className="relative overflow-hidden bg-gradient-to-tr from-yellow-50 via-white to-yellow-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900"
     >

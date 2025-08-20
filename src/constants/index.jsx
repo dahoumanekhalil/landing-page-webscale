@@ -17,14 +17,46 @@ import user2 from "../assets/profile-pictures/user2.jpg";
 import user3 from "../assets/profile-pictures/user3.jpg";
 
 
-export const navItems = [
-  { label: "الرئيسية", href: "#hero" },
-  { label: "البرنامج", href: "#agenda" },
-  { label: "عن الملتقى	", href: "#about-event" },
-  // { label: "المتحدثون", href: "#speakers" }, 
-  { label: "التسجيل", href: "#register" },
-  // { label: "", href: "#contact" },
-];
+// روابط صفحة التسجيل
+export const registrationNav = {
+  links: [
+    { label: "الرئيسية", href: "#hero" },
+    { label: "الأسعار", href: "#pricing" },
+    { label: "الأسئلة الشائعة", href: "#faq" },
+    { label: "تواصل معنا", href: "#contact" },
+  ],
+  actions: [
+    { label: "تسجيل الحضور", href: "#register", type: "primary" },
+    // { label: "تفاصيل الملتقى", href: "#about", type: "secondary" },
+  ],
+};
+
+export const eventNav = {
+  links: [
+    { label: "الرئيسية", href: "#hero" },
+    { label: "عن Webscale", href: "#about-webscale" },
+    { label: "عن الملتقى", href: "#about-event" },
+    { label: "الأجندة", href: "#agenda" },
+    { label: "الرعاة", href: "#sponsors" },
+  ],
+  actions: [
+    { label: "التسجيل", href: "#register", type: "primary" },
+  ],
+};
+
+export const navItems = {
+  Links: [
+    { label: "الرئيسية", href: "#hero" },
+    { label: "البرنامج", href: "#agenda" },
+    { label: "عن الملتقى	", href: "#about-event" },
+    { label: "التسجيل", href: "#register" },
+  ],
+  actions: [
+    { label: "التسجيل", href: "#register", type: "primary" },
+  ],
+};
+
+
 
 
 export const testimonials = [
@@ -89,7 +121,6 @@ export const features = [
 ];
 
 // مستويات الرعاية والرعاة
-// src/constants/index.jsx
 export const sponsors = [
   {
     level: "الراعي الماسي – PREMIUM SPONSOR",
@@ -218,24 +249,22 @@ export const pricingOptions = [
 
 
 // روابط الموارد
-export const resourcesLinks = [
+export const eventResourcesLinks = [
   { href: "#about-event", text: "عن الملتقى" },
   { href: "#agenda", text: "جدول الفعاليات" },
-  { href: "#goals", text: "الاهداف" },
+  { href: "#goals", text: "الأهداف" },
   { href: "#sponsors", text: "الرعاة" },
-  // { href: "#faq", text: "الأسئلة الشائعة" },
 ];
 
 // روابط المنصة
-export const platformLinks = [
+export const eventPlatformLinks = [
   { href: "#register", text: "تمويل الحدث" },
   { href: "#sponsors", text: "فرص الرعاية" },
   { href: "https://maps.app.goo.gl/PVaNURZtnT4WKxTX8", text: "موقع الملتقى" },
-  // { href: "#gallery", text: "معرض الصور" },
   { href: "https://www.webscale.pro/", text: "اتصل بنا" },
 ];
 
-// روابط المجتمع
+// روابط المجتمج 
 export const communityLinks = [
   { href: "https://www.webscale.pro/", text: "الموقع الالكتروني" },
   { href: "https://www.facebook.com/share/15utdJSobi/", text: "فيسبوك" },
@@ -243,6 +272,7 @@ export const communityLinks = [
   { href: "https://www.linkedin.com/company/webscalepro/", text: "لينكدإن" },
   { href: "https://youtube.com/@webscale-pro?si=KWRMamO8XO628NlY", text: "يوتيوب" },
 ];
+
 
 
 
@@ -313,4 +343,45 @@ export const agenda = [
     description: "جلسة مفتوحة للتعارف وبناء شراكات بين الحاضرين.",
     icon: <Handshake className="text-[#fbbc05]" size={24} />
   }
+];
+
+
+// روابط الفوتر (مثال)
+export const footerLinksRegistration = {
+  resourcesLinks: [
+    { text: "الدروس", href: "#" },
+    { text: "المدونة", href: "#" },
+  ],
+  platformLinks: [
+    { text: "التطبيق", href: "#" },
+    { text: "API", href: "#" },
+  ],
+  communityLinks: [
+    { text: "مجتمعنا", href: "#" },
+    { text: "الدعم", href: "#" },
+  ],
+};
+
+export const footerLinksEvent = {
+  resourcesLinks: [
+    { text: "الدليل", href: "#" },
+    { text: "المقالات", href: "#" },
+  ],
+  platformLinks: [
+    { text: "الحدث", href: "#" },
+    { text: "الخدمات", href: "#" },
+  ],
+  communityLinks: [
+    { text: "الرعاة", href: "#" },
+    { text: "الشركاء", href: "#" },
+  ],
+};
+
+export const registrationResourcesLinks = [
+  { href: "#faq", text: "الأسئلة الشائعة" },
+  { href: "#pricing", text: "خطط الأسعار" },
+];
+export const registrationPlatformLinks = [
+  { href: "#register", text: "نموذج التسجيل" },
+  { href: "#contact", text: "اتصل بنا" },
 ];

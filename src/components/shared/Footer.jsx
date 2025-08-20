@@ -1,13 +1,14 @@
 // src/components/shared/Footer.jsx
-import { resourcesLinks, platformLinks, communityLinks } from "../../constants/index";
 import logo from "../../assets/logo.png";
 
-const Footer = () => {
+const Footer = ({ resourcesLinks = [], platformLinks = [], communityLinks = [] }) => {
   return (
     <footer className="mt-20 border-t border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 transition-colors duration-300">
-      <div className="container mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-right" dir="rtl">
-        
-        {/* شعار ووصف */}
+      <div
+        className="container mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-right"
+        dir="rtl"
+      >
+        {/* القسم الأول - الشعار والوصف */}
         <div>
           <div className="flex items-center mb-4">
             <img src={logo} alt="ملتقى WEBSCALE" className="h-10 w-10 ml-2" />
@@ -18,7 +19,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* الروابط - Resources */}
+        {/* القسم الثاني - المصادر */}
         <div>
           <h3 className="text-md font-semibold mb-4 text-neutral-800 dark:text-neutral-200">المصادر</h3>
           <ul className="space-y-2">
@@ -35,7 +36,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* الروابط - المنصة */}
+        {/* القسم الثالث - المنصة */}
         <div>
           <h3 className="text-md font-semibold mb-4 text-neutral-800 dark:text-neutral-200">المنصة</h3>
           <ul className="space-y-2">
@@ -52,7 +53,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* الروابط - المجتمع */}
+        {/* القسم الرابع - المجتمع */}
         <div>
           <h3 className="text-md font-semibold mb-4 text-neutral-800 dark:text-neutral-200">المجتمع</h3>
           <ul className="space-y-2">
@@ -60,6 +61,8 @@ const Footer = () => {
               <li key={index}>
                 <a
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-[#FABC05] dark:hover:text-[#FABC05] transition-colors"
                 >
                   {link.text}
@@ -70,7 +73,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* الحقوق */}
+      {/* حقوق النشر */}
       <div className="mt-10 border-t border-neutral-300 dark:border-neutral-700 py-4 text-center text-sm text-neutral-600 dark:text-neutral-400">
         جميع الحقوق محفوظة © {new Date().getFullYear()} ملتقى WEBSCALE
       </div>

@@ -102,7 +102,7 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
   };
 
   const FormUI = (
-    <form onSubmit={handleSubmit} className="space-y-8 text-right">
+    <form id="register" onSubmit={handleSubmit} className="space-y-8 text-right">
       {/* القسم 1 – معلومات الشركة */}
       <div>
         <h4 className="font-bold mb-4 text-lg">القسم 1 – معلومات الشركة</h4>

@@ -10,6 +10,7 @@ import AboutEvent from "../components/sponsoring/AboutEvent";
 import UnifiedRegistrationForm from "../components/sponsoring/UnifiedRegistrationForm";
 import LogosCarousel from "../components/sponsoring/PartnersMarquee";
 import Footer from "../components/shared/Footer";
+import { communityLinks, eventNav, eventPlatformLinks, eventResourcesLinks } from "@/constants";
 
 const EventLandingPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,7 +25,8 @@ const EventLandingPage = () => {
 
   return (
     <div className="bg-white dark:bg-neutral-900 dark:text-white min-h-screen">
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar navConfig={eventNav} />
+      {/* <Navbar darkMode={darkMode} setDarkMode={setDarkMode} /> */}
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <HeroSection />
         <AboutWebscale />
@@ -34,7 +36,12 @@ const EventLandingPage = () => {
         <FeatureSection />
         <UnifiedRegistrationForm mode="inline" />
         <LogosCarousel />
-        <Footer />
+        {/* <Footer /> */}
+        <Footer
+  resourcesLinks={eventResourcesLinks}
+  platformLinks={eventPlatformLinks}
+  communityLinks={communityLinks}
+/>
       </div>
     </div>
   );

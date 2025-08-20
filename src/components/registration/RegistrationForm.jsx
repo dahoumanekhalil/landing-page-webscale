@@ -171,7 +171,7 @@ export default function RegistrationForm() {
       </AnimatePresence>
 
       {/* ✅ الفورم */}
-      <motion.div
+      <motion.div id="register"
         transition={{ duration: 0.6 }}
         className="lg:col-span-2 rounded-3xl border border-gray-200 dark:border-neutral-700 
                    bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl transition"
