@@ -1,3 +1,4 @@
+// src/components/registration/ApplicationForm.jsx
 import { motion } from "framer-motion";
 import RegistrationForm from "./RegistrationForm";
 import AsideInfo from "./AsideInfo";

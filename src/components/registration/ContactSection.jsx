@@ -144,3 +144,78 @@ export default function ContactSection({ scrollToSection }) {
     </section>
   );
 }
+
+
+    // 📌 أضف البيانات في الجدول
+    // sheet.appendRow([
+    //   new Date(), // تاريخ الإرسال
+    //   data.name || "",
+    //   data.email || "",
+    //   data.phone || "",
+    //   data.jobTitle || "",
+    //   data.company || "",
+    //   data.sector || "",
+    //   data.employees || "",
+    //   data.subscription || "",
+    //   data.notes || "",
+    // ]);
+
+
+
+
+    // var userMessage = `
+    // مرحباً ${data.name},
+    
+    // شكراً لتسجيلك في ملتقى WEBSCALE.
+    // هذه نسخة من بياناتك المسجلة:
+    
+    // البريد الإلكتروني: ${data.email}
+    // الهاتف: ${data.phone}
+    // اسم الوظيفة: ${data.jobTitle}
+    // الشركة: ${data.company}
+
+    // القطاع: ${data.sector}
+    // العامل: ${data.employees}
+    
+    // الملاحظة: ${data.subscription}
+    
+    // النقاط الاضافية: ${data.notes}
+
+    // سوف نتواصل معك قريباً.
+    // فريق WEBSCALE
+    // `;
+    
+        // 📌 نص الإيميل الذي سيتم إرساله لك
+    //     var adminMessage = `
+    // 📢 تسجيل جديد في ملتقى WEBSCALE:
+    
+    // اسم الشركة: ${data.companyName}
+    // القطاع: ${data.sector} ${data.otherSector}
+    // حجم الشركة: ${data.companySize}
+    // الولاية: ${data.wilaya}
+    
+    // الاسم الكامل: ${data.fullName}
+    // المنصب: ${data.role}
+    // البريد الإلكتروني: ${data.email}
+    // الهاتف: ${data.phone}
+    
+    // نوع الرعاية: ${data.sponsorshipType} ${data.otherSponsorType}
+    // أهداف الرعاية: ${data.sponsorshipGoals} ${data.otherGoal}
+    // الميزانية: ${data.budget}
+    
+    // ملاحظات إضافية: ${data.notes}
+    // `;
+
+//     // 🟣 إضافة البيانات كسطر جديد
+//     sheet.appendRow([
+//       new Date(),                 // Timestamp
+//       data.name || "",
+//       data.email || "",
+//       data.phone || "",
+//       data.jobTitle || "",
+//       data.company || "",
+//       data.sector || "",
+//       data.employees || "",
+//       data.subscription || "",
+//       data.notes || ""
+//     ]);
