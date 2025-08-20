@@ -1,4 +1,4 @@
-// src/components/UnifiedRegistrationForm.jsx
+// src/components/sponsoring/UnifiedRegistrationForm.jsx
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -8,9 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
-import AlgeriaWilayas from "./AlgeriaWilayas";
+import AlgeriaWilayas from "../AlgeriaWilayas";
 
-const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
+// const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
 export default function UnifiedRegistrationForm({ mode = "inline", isOpen = false, onClose }) {
   const [status, setStatus] = useState("idle");

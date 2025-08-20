@@ -1,8 +1,9 @@
+// src/components/sponsoring/HeroSection.jsx
 import { useState, useEffect } from "react";
 import { CalendarDays, Edit3 } from "lucide-react";
 import UnifiedRegistrationForm from "./UnifiedRegistrationForm"; // الفورم الجديد
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
+// import video1 from "../assets/video1.mp4";
+// import video2 from "../assets/video2.mp4";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

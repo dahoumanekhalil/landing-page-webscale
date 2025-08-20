@@ -1,7 +1,8 @@
+// src/components/shared/Navbar.jsx
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/logo.png";
-import { navItems } from "../constants";
+import logo from "../../assets/logo.png";
+import { navItems } from "../../constants";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);

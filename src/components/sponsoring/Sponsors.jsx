@@ -1,5 +1,5 @@
-// src/components/Sponsors.jsx
-import { sponsors } from "../constants";
+// src/components/sponsoring/Sponsors.jsx
+import { sponsors } from "../../constants";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";

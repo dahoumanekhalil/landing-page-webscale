@@ -1,4 +1,4 @@
-// src/components/AboutWebscale.jsx
+// src/components/sponsoring/AboutWebscale.jsx
 import { Eye, Rocket, Star } from "lucide-react";
 
 const AboutWebscale = () => {

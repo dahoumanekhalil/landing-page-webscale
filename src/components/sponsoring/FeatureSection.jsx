@@ -1,5 +1,5 @@
-// src/components/FeatureSection.jsx 
-import { features } from "../constants";
+// src/components/sponsoring/FeatureSection.jsx 
+import { features } from "../../constants";
 
 const FeatureSection = () => {
   return (

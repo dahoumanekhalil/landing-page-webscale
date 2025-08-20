@@ -1,4 +1,4 @@
-// src/components/AboutEvent.jsx
+// src/components/sponsoring/AboutEvent.jsx
 import { Lightbulb, Target, Users, Rocket, Award, Star, Briefcase } from "lucide-react";
 import AOS from "aos";
 import { useEffect } from "react";

@@ -1,5 +1,5 @@
-// src/components/Agenda.jsx
-import { agenda } from "../constants";
+// src/components/sponsoring/Agenda.jsx
+import { agenda } from "../../constants";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";

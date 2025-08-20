@@ -1,4 +1,4 @@
-// src/components/LogosCarousel.jsx
+// src/components/sponsoring/LogosCarousel.jsx
 import logo1 from "@/assets/1.png";
 import logo2 from "@/assets/2.png";
 import logo3 from "@/assets/3.png";

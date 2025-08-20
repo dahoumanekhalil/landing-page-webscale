@@ -1,6 +1,6 @@
-// src/components/Footer.jsx
-import { resourcesLinks, platformLinks, communityLinks } from "../constants";
-import logo from "../assets/logo.png";
+// src/components/shared/Footer.jsx
+import { resourcesLinks, platformLinks, communityLinks } from "../../constants/index";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (

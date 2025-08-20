@@ -1,46 +1,62 @@
 // src/App.jsx
-import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import FeatureSection from "./components/FeatureSection";
-import Footer from "./components/Footer";
-import Agenda from "./components/Agenda";
-import Sponsors from "./components/Sponsors";
-import AboutWebscale from "./components/AboutWebscale";
-import AboutEvent from "./components/AboutEvent";
-import UnifiedRegistrationForm from "./components/UnifiedRegistrationForm";
-// import PartnersMarquee from "./components/PartnersMarquee";
-import LogosCarousel from "./components/PartnersMarquee";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EventLandingPage from "./pages/EventLandingPage";
+import Registration from "./pages/Registration";
 
-const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-
+export default function App() {
   return (
-    <div className="bg-white dark:bg-neutral-900 dark:text-white min-h-screen">
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="max-w-7xl mx-auto pt-20 px-6">
-        <HeroSection />
-        <AboutWebscale />
-        <AboutEvent/>
-        <Agenda /> 
-        <Sponsors/> 
-        <FeatureSection />
-        <UnifiedRegistrationForm mode="inline"/>
-        {/* <PartnersMarquee/> */}
-        <LogosCarousel/>
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/event" element={<EventLandingPage />} />
+        <Route path="/" element={<Registration />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
-export default App;
+
+
+// // src/App.jsx
+// import { useState, useEffect } from "react";
+// import Navbar from "./components/shared/Navbar";
+// import HeroSection from "./components/sponsoring/HeroSection";
+// import FeatureSection from "./components/sponsoring/FeatureSection";
+// import Agenda from "./components/sponsoring/Agenda";
+// import Sponsors from "./components/sponsoring/Sponsors";
+// import AboutWebscale from "./components/sponsoring/AboutWebscale";
+// import AboutEvent from "./components/sponsoring/AboutEvent";
+// import UnifiedRegistrationForm from "./components/sponsoring/UnifiedRegistrationForm";
+// import LogosCarousel from "./components/sponsoring/PartnersMarquee";
+// import Footer from "./components/shared/Footer";
+
+// const App = () => {
+//   const [darkMode, setDarkMode] = useState(false);
+
+//   useEffect(() => {
+//     if (darkMode) {
+//       document.documentElement.classList.add("dark");
+//     } else {
+//       document.documentElement.classList.remove("dark");
+//     }
+//   }, [darkMode]);
+
+//   return (
+//     <div className="bg-white dark:bg-neutral-900 dark:text-white min-h-screen">
+//       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+//       <div className="max-w-7xl mx-auto pt-20 px-6">
+//         <HeroSection />
+//         <AboutWebscale />
+//         <AboutEvent/>
+//         <Agenda /> 
+//         <Sponsors/> 
+//         <FeatureSection />
+//         <UnifiedRegistrationForm mode="inline"/>
+//         <LogosCarousel/>
+//         <Footer />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
 
