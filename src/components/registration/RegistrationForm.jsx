@@ -276,17 +276,18 @@ export default function RegistrationForm() {
           label="عدد الموظفين"
           required
           name="employees"
-          options={["أقل من 5", "من 5 إلى 20", "أكثر من 20"]}
+          options={["أقل من 5", "من 5 إلى 20", "من 20 الى 100","اكثر من 100"]}
           value={form.employees}
           onChange={(val) => setForm({ ...form, employees: val })}
         />
 
+
         {/* الاشتراك */}
         <OptionPills
-          label="هل أنت مهتم بالاشتراك السنوي في WEBSCALE VIP؟"
+          label="اختر الاشتراك المناسب"
           required
           name="subscription"
-          options={["نعم مهتم", "أريد تفاصيل أخرى", "غير مهتم حالياً"]}
+          options={["STARTER","VIP","VIP+"]}
           value={form.subscription}
           onChange={(val) => setForm({ ...form, subscription: val })}
         />

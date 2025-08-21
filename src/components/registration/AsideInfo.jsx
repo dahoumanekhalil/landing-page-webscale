@@ -16,7 +16,7 @@ export default function AsideInfo({ fadeInUp }) {
       <ul className="space-y-2 text-gray-700 dark:text-gray-300">
         <li className="flex items-start gap-2">
           <span className="text-green-500 mt-1">✓</span>
-          <span>أن تكون <strong>صاحب شركة</strong> أو <strong>مديراً</strong> على الأقل.</span>
+          <span>أن تكون <strong>صاحب شركة</strong> أو <strong>مديراً</strong></span>
         </li>
         <li className="flex items-start gap-2">
           <span className="text-green-500 mt-1">✓</span>
@@ -24,7 +24,7 @@ export default function AsideInfo({ fadeInUp }) {
         </li>
         <li className="flex items-start gap-2">
           <span className="text-green-500 mt-1">✓</span>
-          <span>رغبة واضحة في تطبيق تقنيات عملية وأتمتة.</span>
+          <span>رغبة واضحة في التعلم و الاستفادة .</span>
         </li>
       </ul>
 
@@ -34,7 +34,7 @@ export default function AsideInfo({ fadeInUp }) {
       <ol className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
         <li className="flex gap-2"><span className="font-medium text-[var(--brand)]">1.</span> تستلم بريد قبول مع <strong>رابط دعوة</strong>.</li>
         <li className="flex gap-2"><span className="font-medium text-[var(--brand)]">2.</span> تُفتح لك القنوات المناسبة لباقة الاشتراك.</li>
-        <li className="flex gap-2"><span className="font-medium text-[var(--brand)]">3.</span> دعوة لأول بث مباشر وجدولة جلسة تعريف.</li>
+        <li className="flex gap-2"><span className="font-medium text-[var(--brand)]">3.</span>مرافقة طوال فترة الاشتراك.</li>
       </ol>
     </motion.aside>
   );

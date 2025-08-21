@@ -2,50 +2,14 @@
 "use client";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    price: "9,000 دج",
-    features: [
-      "الوصول الكامل إلى المجتمع المغلق",
-      "متابعة تسجيلات اللقاءات الأسبوعية",
-      "الاستفادة من الدورات المسجلة عبر المنصة",
-      "إمكانية الوصول إلى المحتوى في أي وقت",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "VIP",
-    price: "35,000 دج",
-    features: [
-      "الوصول الكامل إلى المجتمع المغلق",
-      "متابعة تسجيلات اللقاءات الأسبوعية",
-      "الاستفادة من الدورات المسجلة عبر المنصة",
-      "إمكانية الوصول إلى المحتوى في أي وقت",
-      "حضور اللقاءات الأسبوعية المباشرة",
-    ],
-    highlighted: true, // ⭐ البطاقة الأساسية
-  },
-  {
-    name: "VIP+",
-    price: "55,000 دج",
-    features: [
-      "الوصول الكامل إلى المجتمع المغلق",
-      "متابعة تسجيلات اللقاءات الأسبوعية",
-      "الاستفادة من الدورات المسجلة عبر المنصة",
-      "إمكانية الوصول إلى المحتوى في أي وقت",
-      "حضور اللقاءات الأسبوعية المباشرة",
-      "إمكانية طرح الأسئلة أثناء اللقاءات الأسبوعية",
-      "المشاركة في الأيام الدراسية الحضورية",
-    ],
-    highlighted: false,
-  },
-];
+import { plans } from "@/constants";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-br from-yellow-50 via-white to-yellow-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900">
+    <section
+      id="pricing"
+      className="py-20 bg-gradient-to-br from-yellow-50 via-white to-yellow-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900"
+    >
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-extrabold mb-4">
           خطط الاشتراك <span className="text-[#FABC05]">Webscale</span>
@@ -68,15 +32,25 @@ export default function PricingSection() {
                     : "bg-white/80 dark:bg-neutral-900/80 border-gray-200 dark:border-neutral-700"
                 }`}
             >
+              {/* ⭐ Badge الأكثر شيوعاً */}
               {plan.highlighted && (
                 <span className="absolute -top-4 right-6 bg-black text-[#FABC05] text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                   الأكثر شيوعاً
                 </span>
               )}
 
+              {/* 🎁 Badge مجاني */}
+              {plan.badge && (
+                <span dir="rtl" className="absolute -top-4 right-6 bg-[#FABC05] text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  {plan.badge}
+                </span>
+              )}
+
               <h3
                 className={`text-2xl font-bold mb-4 ${
-                  plan.highlighted ? "text-black" : "text-gray-800 dark:text-gray-200"
+                  plan.highlighted
+                    ? "text-black"
+                    : "text-gray-800 dark:text-gray-200"
                 }`}
               >
                 {plan.name}

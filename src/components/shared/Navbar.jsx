@@ -38,7 +38,7 @@ const Navbar = ({ navConfig }) => {
         <div className="flex items-center flex-shrink-0">
           <a href="#hero" className="flex items-center hover:text-[#FABC05] transition-colors duration-200 font-medium">
             <img className="h-10 w-10 mr-2 rounded-md" src={logo} alt="Logo" />
-            <span className="text-xl font-bold tracking-tight">ملتقى WEBSCALE</span>
+            <span className="text-xl font-bold tracking-tight">WEBSCALE</span>
           </a>
         </div>
 
