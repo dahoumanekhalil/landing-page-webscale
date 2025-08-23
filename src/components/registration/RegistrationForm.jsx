@@ -97,7 +97,7 @@ export default function RegistrationForm() {
       Object.entries(payload).forEach(([key, val]) => {
         formPayload.append(key, val);
       });
-  
+      console.log("SCRIPT_URL:", SCRIPT_URL)
       // ✅ إرسال الطلب بدون headers (CORS-friendly)
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
