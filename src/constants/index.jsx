@@ -26,7 +26,7 @@ export const registrationNav = {
     { label: "تواصل معنا", href: "#contact" },
   ],
   actions: [
-    { label: "تسجيل الحضور", href: "#register", type: "primary" },
+    { label: "إشترك الان", href: "#register", type: "primary" },
     // { label: "تفاصيل الملتقى", href: "#about", type: "secondary" },
   ],
 };

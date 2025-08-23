@@ -45,14 +45,14 @@ const Hero = () => {
               >
                 قدِّم طلب الانضمام
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection("benefits")}
                 className="rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-800 transition-colors"
               >
                 تعرَّف على المزايا
-              </motion.button>
+              </motion.button> */}
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
               <span>مواعيد الجلسات المباشرة مع الخبراء: السبت/الإثنين/الأربعاء ·</span>

@@ -61,7 +61,7 @@ const Navbar = ({ navConfig }) => {
               href={action.href}
               className={
                 action.type === "primary"
-                  ? "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 bg-gradient-to-r from-[#FABC05]/90 to-[#977b25]/90 text-neutral-100 font-medium shadow-sm hover:from-[#FABC05] hover:to-[#977b25] transition-colors duration-200"
+                  ? "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 bg-gradient-to-r from-[#FABC05]/90 to-[#c89d1b]/90 text-neutral-100 font-medium shadow-sm hover:scale-105 transition-all duration-100"
                   : "py-2 px-4 rounded-md bg-neutral-200 text-neutral-700 dark:text-[#FABC05] dark:bg-neutral-600 font-medium shadow-sm hover:opacity-90 transition-opacity"
               }
             >
