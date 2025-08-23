@@ -77,7 +77,7 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.honey) return;
+    if (form.honey) return; // 🐝 حماية من bots
   
     const v = validate();
     setErrors(v);
@@ -92,13 +92,14 @@ export default function RegistrationForm() {
         source: "webscale-landing",
       };
   
-      // ✅ تجهيز FormData
+      // ✅ تجهيز FormData (CORS-friendly)
       const formPayload = new FormData();
       Object.entries(payload).forEach(([key, val]) => {
         formPayload.append(key, val);
       });
-      console.log("SCRIPT_URL:", SCRIPT_URL)
-      // ✅ إرسال الطلب بدون headers (CORS-friendly)
+  
+      console.log("SCRIPT_URL:", SCRIPT_URL);
+  
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
         body: formPayload,
@@ -107,23 +108,24 @@ export default function RegistrationForm() {
       const data = await res.json().catch(() => ({}));
       console.log("Response from server:", data);
   
+      // ✅ التحقق من رد Google Apps Script
       if (res.ok && data.status === "success") {
         setModal({
           type: "success",
-          message: "✅ تم إرسال طلبك بنجاح. سنراجع بياناتك ونتواصل معك قريبًا.",
+          message: "✅ تم تسجيلك بنجاح! سنراجع طلبك ونتواصل معك قريبًا.",
         });
-        setForm(initialForm);
+        setForm(initialForm); // تفريغ الفورم بعد النجاح
       } else {
         setModal({
           type: "error",
-          message: "⚠️ تعذر إرسال الطلب. حاول مرة أخرى.",
+          message: "⚠️ لم نتمكن من إتمام العملية. حاول مرة أخرى.",
         });
       }
     } catch (err) {
       console.error("Fetch error:", err);
       setModal({
         type: "error",
-        message: "⚠️ حدث خطأ غير متوقع. تحقق من اتصالك وحاول مجددًا.",
+        message: "⚠️ حدث خطأ في الاتصال. تحقق من الإنترنت وحاول مجددًا.",
       });
     } finally {
       setIsSubmitting(false);
