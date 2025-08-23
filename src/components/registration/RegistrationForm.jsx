@@ -22,7 +22,7 @@ const initialForm = {
   name: "",
   email: "",
   phone: "",
-  job: "",
+  jobTitle: "",
   company: "",
   sector: "",
   employees: "",
@@ -52,7 +52,7 @@ export default function RegistrationForm() {
         form.name &&
         form.email &&
         form.phone &&
-        form.job &&
+        form.jobTitle &&
         form.company &&
         form.sector &&
         form.employees &&
@@ -67,7 +67,7 @@ export default function RegistrationForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "بريد غير صحيح";
     if (!form.phone.trim()) e.phone = "هذا الحقل مطلوب";
-    if (!form.job) e.job = "اختر المسمى الوظيفي";
+    if (!form.jobTitle) e.jobTitle = "اختر المسمى الوظيفي";
     if (!form.company.trim()) e.company = "هذا الحقل مطلوب";
     if (!form.sector.trim()) e.sector = "هذا الحقل مطلوب";
     if (!form.employees) e.employees = "اختر عدد الموظفين";
@@ -231,16 +231,16 @@ export default function RegistrationForm() {
           </label>
           <select
             className={fieldBase}
-            value={form.job}
-            onChange={(e) => setForm({ ...form, job: e.target.value })}
+            value={form.jobTitle}
+            onChange={(e) => setForm({ ...form, jobTitle: e.target.value })}
           >
             <option value="">اختر</option>
             <option value="صاحب شركة">صاحب شركة</option>
             <option value="مدير أو مسير شركة">مدير أو مسير شركة</option>
             <option value="وظيفة أخرى">وظيفة أخرى</option>
           </select>
-          {errors.job && (
-            <div className={errorText}>{errors.job}</div>
+          {errors.jobTitle && (
+            <div className={errorText}>{errors.jobTitle}</div>
           )}
         </div>
 
@@ -350,7 +350,7 @@ export default function RegistrationForm() {
 //   name: "",
 //   email: "",
 //   phone: "",
-//   job: "",
+//   jobTitle: "",
 //   company: "",
 //   sector: "",
 //   employees: "",
@@ -372,7 +372,7 @@ export default function RegistrationForm() {
 //         form.name &&
 //         form.email &&
 //         form.phone &&
-//         form.job &&
+//         form.jobTitle &&
 //         form.company &&
 //         form.sector &&
 //         form.employees &&
@@ -387,7 +387,7 @@ export default function RegistrationForm() {
 //     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
 //       e.email = "بريد غير صحيح";
 //     if (!form.phone.trim()) e.phone = "هذا الحقل مطلوب";
-//     if (!form.job) e.job = "اختر المسمى الوظيفي";
+//     if (!form.jobTitle) e.jobTitle = "اختر المسمى الوظيفي";
 //     if (!form.company.trim()) e.company = "هذا الحقل مطلوب";
 //     if (!form.sector.trim()) e.sector = "هذا الحقل مطلوب";
 //     if (!form.employees) e.employees = "اختر عدد الموظفين";
@@ -534,16 +534,16 @@ export default function RegistrationForm() {
 //           </label>
 //           <select
 //             className={fieldBase}
-//             value={form.job}
-//             onChange={(e) => setForm({ ...form, job: e.target.value })}
+//             value={form.jobTitle}
+//             onChange={(e) => setForm({ ...form, jobTitle: e.target.value })}
 //           >
 //             <option value="">اختر</option>
 //             <option value="صاحب شركة">صاحب شركة</option>
 //             <option value="مدير أو مسير شركة">مدير أو مسير شركة</option>
 //             <option value="وظيفة أخرى">وظيفة أخرى</option>
 //           </select>
-//           {errors.job && (
-//             <div className={errorText}>{errors.job}</div>
+//           {errors.jobTitle && (
+//             <div className={errorText}>{errors.jobTitle}</div>
 //           )}
 //         </div>
 
