@@ -289,7 +289,7 @@ export default function RegistrationForm() {
           label="اختر الاشتراك المناسب"
           required
           name="subscription"
-          options={["STARTER","VIP","VIP+"]}
+          options={["STARTER","VIP","VIP+","free"]}
           value={form.subscription}
           onChange={(val) => setForm({ ...form, subscription: val })}
         />

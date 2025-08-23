@@ -1,13 +1,13 @@
 // ContactSection.jsx
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Globe, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Globe, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 
 const socials = [
-  { name: "Facebook", href: "https://facebook.com", icon: <Facebook size={18} /> },
-  { name: "Twitter", href: "https://twitter.com", icon: <Twitter size={18} /> },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: <Linkedin size={18} /> },
-  { name: "Instagram", href: "https://instagram.com", icon: <Instagram size={18} /> },
+  { name: "Facebook", href: "https://www.facebook.com/share/15utdJSobi/", icon: <Facebook size={18} /> },
+  { name: "Youtube", href: "https://youtube.com/@webscale-pro?si=KWRMamO8XO628NlY", icon: <Youtube size={18} /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/webscalepro/", icon: <Linkedin size={18} /> },
+  { name: "Instagram", href: "https://www.instagram.com/webscale.pro?igsh=MXg0OXRjOXk5bGExag==", icon: <Instagram size={18} /> },
 ];
 
 export default function ContactSection({ scrollToSection }) {
@@ -127,6 +127,7 @@ export default function ContactSection({ scrollToSection }) {
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               إذا كنت صاحب قرار في شركتك، قدِّم طلبك وسنعاودك خلال وقت وجيز.
             </p>
+            <a href="#register">
             <button
   onClick={() => scrollToSection("apply")}
   className="w-full rounded-xl  text-white bg-[#FABC05] hover:bg-[#ecc03a]
@@ -135,6 +136,7 @@ export default function ContactSection({ scrollToSection }) {
 >
   الانتقال إلى نموذج التقديم
 </button>
+</a>
             <div className="text-xs text-gray-500 dark:text-gray-400 text-center mt-6 space-y-1">
               <p>⏳ أوقات الاستجابة: 24-48 ساعة عمل</p>
               {/* <p>✅ معدل القبول: ~30% من المتقدمين</p> */}
