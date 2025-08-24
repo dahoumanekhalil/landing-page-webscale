@@ -36,7 +36,7 @@ export default function PricingSection() {
                 {/* ⭐ Badge الأكثر شيوعاً */}
                 {plan.highlighted && (
                   <span className="absolute -top-4 right-6 bg-black text-[#FABC05] text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                    الأكثر شيوعاً
+                    المنصوح به
                   </span>
                 )}
 
