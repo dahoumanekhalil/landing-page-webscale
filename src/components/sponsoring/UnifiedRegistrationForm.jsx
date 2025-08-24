@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
-import AlgeriaWilayas from "../AlgeriaWilayas";
+import AlgeriaWilayas from "../shared/AlgeriaWilayas";
 
 const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
 // const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
@@ -131,8 +131,12 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
           ))}
         </div>
 
-        <Label>الموقع الجغرافي / الولاية</Label>
-        <AlgeriaWilayas value={formData.wilaya} name="location" onChange={(val) => setFormData({...formData, wilaya: val})} />
+        {/* الموقع الجغرافي / الولاية */}
+<Label>الموقع الجغرافي / الولاية</Label>
+<AlgeriaWilayas
+  value={formData.wilaya}
+  onChange={(val) => setFormData({ ...formData, wilaya: val })}
+/>
       </div>
 
       {/* القسم 2 – بيانات التواصل */}

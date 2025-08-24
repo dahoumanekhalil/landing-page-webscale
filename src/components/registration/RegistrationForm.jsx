@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import OptionPills from "./OptionPills";
+import AlgeriaWilayas from "../shared/AlgeriaWilayas";
 
 const BRAND = "#FABC05";
 const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
@@ -24,6 +25,7 @@ const initialForm = {
   phone: "",
   jobTitle: "",
   company: "",
+  wilaya: "",
   sector: "",
   employees: "",
   subscription: "",
@@ -69,6 +71,7 @@ export default function RegistrationForm() {
     if (!form.phone.trim()) e.phone = "هذا الحقل مطلوب";
     if (!form.jobTitle) e.jobTitle = "اختر المسمى الوظيفي";
     if (!form.company.trim()) e.company = "هذا الحقل مطلوب";
+    if (!form.wilaya) e.wilaya = "اختر الولاية";
     if (!form.sector.trim()) e.sector = "هذا الحقل مطلوب";
     if (!form.employees) e.employees = "اختر عدد الموظفين";
     if (!form.subscription) e.subscription = "اختر خيار الاشتراك";
@@ -258,6 +261,20 @@ export default function RegistrationForm() {
           />
           {errors.company && <div className={errorText}>{errors.company}</div>}
         </div>
+
+        {/* الولاية */}
+        <div>
+  <label htmlFor="wilaya" className={labelBase}>
+    الولاية <span className="text-red-500">*</span>
+  </label>
+  <AlgeriaWilayas
+    value={form.wilaya}
+    onChange={(val) => setForm({ ...form, wilaya: val })}
+    name="wilaya"
+  />
+  {errors.wilaya && <div className={errorText}>{errors.wilaya}</div>}
+</div>
+
 
         {/* القطاع */}
         <div>

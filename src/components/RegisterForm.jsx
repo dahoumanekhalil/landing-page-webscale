@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import AlgeriaWilayas from "./AlgeriaWilayas";
+import AlgeriaWilayas from "./shared/AlgeriaWilayas";
 
 const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
