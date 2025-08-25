@@ -49,7 +49,14 @@ export default function PricingSection() {
                 >
                   {plan.name}
                 </h3>
-                <p className="text-4xl font-extrabold mb-6">{plan.price}</p>
+
+                {/* السعر + ملاحظة بدون رسوم */}
+                <div className="mb-6">
+                  <p className="text-4xl font-extrabold">{plan.price}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    السعر بدون رسوم
+                  </p>
+                </div>
 
                 <ul dir="rtl" className="space-y-3 text-right">
                   {plan.features.map((f, i) => (

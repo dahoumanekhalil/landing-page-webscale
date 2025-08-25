@@ -142,36 +142,47 @@ export default function RegistrationForm() {
       <AnimatePresence>
         {modal && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setModal(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className={`max-w-md w-full rounded-2xl p-6 shadow-xl text-center relative ${
-                modal.type === "success"
-                  ? "bg-green-50 border border-green-300 text-green-800"
-                  : "bg-red-50 border border-red-300 text-red-800"
-              }`}
-              onClick={(e) => e.stopPropagation()}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className={`max-w-md w-full rounded-2xl p-6 shadow-2xl text-center relative
+            ${modal.type === "success"
+              ? "bg-gradient-to-br from-green-50 to-green-100 border border-green-300 text-green-900"
+              : "bg-gradient-to-br from-red-50 to-red-100 border border-red-300 text-red-900"
+            }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="text-4xl mb-3">
+            {modal.type === "success" ? "✅" : "⚠️"}
+          </div>
+          <h3 className="text-2xl font-bold mb-2">
+            {modal.type === "success" ? "تم تسجيل طلبك" : "حدث خطأ"}
+          </h3>
+          <p className="leading-relaxed text-sm md:text-base">
+            {modal.message}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3 justify-center">
+            <button
+              onClick={() => setModal(null)}
+              className="px-5 py-2 rounded-xl bg-[var(--brand)] text-black font-medium shadow hover:shadow-lg transition"
             >
-              <h3 className="text-xl font-bold mb-3">
-                {modal.type === "success" ? "🎉 نجاح" : "⚠️ خطأ"}
-              </h3>
-              <p className="leading-relaxed">{modal.message}</p>
+              إغلاق
+            </button>
+            {modal.type === "success" && (
               <button
-                onClick={() => setModal(null)}
-                className="mt-5 px-4 py-2 rounded-xl bg-[var(--brand)] text-black font-medium shadow hover:shadow-lg transition"
+                onClick={() => {
+                  setModal(null);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="px-5 py-2 rounded-xl bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium shadow hover:shadow-lg transition"
               >
-                إغلاق
+                العودة للرئيسية
               </button>
-            </motion.div>
-          </motion.div>
+            )}
+          </div>
+        </motion.div>
+        
         )}
       </AnimatePresence>
 
