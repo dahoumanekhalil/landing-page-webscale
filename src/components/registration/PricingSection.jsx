@@ -54,7 +54,7 @@ export default function PricingSection() {
                 <div className="mb-6">
                   <p className="text-4xl font-extrabold">{plan.price}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    السعر بدون رسوم
+                    اشتراك سنوي بدون رسوم
                   </p>
                 </div>
 
