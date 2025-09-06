@@ -7,7 +7,7 @@ const socials = [
   { name: "Facebook", href: "https://www.facebook.com/share/15utdJSobi/", icon: <Facebook size={18} /> },
   { name: "Youtube", href: "https://youtube.com/@webscale-pro?si=KWRMamO8XO628NlY", icon: <Youtube size={18} /> },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/webscalepro/", icon: <Linkedin size={18} /> },
-  { name: "Instagram", href: "https://www.instagram.com/webscale.pro?igsh=MXg0OXRjOXk5bGExag==", icon: <Instagram size={18} /> },
+  { name: "Instagram", href: "https://www.instagram.com/webscale.dz/", icon: <Instagram size={18} /> },
 ];
 
 export default function ContactSection({ scrollToSection }) {
