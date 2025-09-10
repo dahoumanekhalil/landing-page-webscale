@@ -1,7 +1,7 @@
 // ContactSection.jsx
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Globe, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Facebook, Globe, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
 
 const socials = [
   { name: "Facebook", href: "https://www.facebook.com/share/15utdJSobi/", icon: <Facebook size={18} /> },
@@ -67,10 +67,10 @@ export default function ContactSection({ scrollToSection }) {
       <div>
         <p className="font-medium">البريد الإلكتروني</p>
         <a
-          href="mailto:webscale.pro@gmail.com"
+          href="mailto:contact@webscale.dz"
           className="text-[var(--brand)] hover:underline"
         >
-          webscale.pro@gmail.com
+          contact@webscale.dz
         </a>
       </div>
     </div>

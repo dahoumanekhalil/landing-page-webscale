@@ -1,9 +1,9 @@
 // src/components/registration/RegistrationForm.jsx 
 "use client";
-import { useState, useMemo, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import OptionPills from "./OptionPills";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
 import AlgeriaWilayas from "../shared/AlgeriaWilayas";
+import OptionPills from "./OptionPills";
 
 const BRAND = "#FABC05";
 const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
@@ -28,6 +28,7 @@ const initialForm = {
   wilaya: "",
   sector: "",
   employees: "",
+  accountOwnership: "",
   subscription: "",
   notes: "",
   honey: "",
@@ -49,6 +50,7 @@ export default function RegistrationForm() {
     wilaya: useRef(null),
     sector: useRef(null),
     employees: useRef(null),
+    accountOwnership: useRef(null),
     subscription: useRef(null),
   };
 
@@ -69,8 +71,10 @@ export default function RegistrationForm() {
         form.phone &&
         form.jobTitle &&
         form.company &&
+        form.wilaya &&
         form.sector &&
         form.employees &&
+        form.accountOwnership &&
         form.subscription
       )
     );
@@ -87,6 +91,7 @@ export default function RegistrationForm() {
     if (!form.wilaya) e.wilaya = "اختر الولاية";
     if (!form.sector.trim()) e.sector = "هذا الحقل مطلوب";
     if (!form.employees) e.employees = "اختر عدد الموظفين";
+    if (!form.accountOwnership) e.accountOwnership = "اختر ملكية الحساب";
     if (!form.subscription) e.subscription = "اختر خيار الاشتراك";
     return e;
   };
@@ -312,9 +317,11 @@ export default function RegistrationForm() {
               onChange={(e) => setForm({ ...form, jobTitle: e.target.value })}
             >
               <option value="">اختر</option>
-              <option value="صاحب شركة">صاحب شركة</option>
-              <option value="مدير أو مسير شركة">مدير أو مسير شركة</option>
-              <option value="وظيفة أخرى">وظيفة أخرى</option>
+              <option value="المدير العام">المدير العام</option>
+              <option value="مسير الشركة">مسير الشركة</option>
+              <option value="مدير فرع">مدير فرع</option>
+              <option value="مدير قسم">مدير قسم</option>
+              <option value="موظف">موظف</option>
             </select>
             {errors.jobTitle && (
               <div className={errorText}>{errors.jobTitle}</div>
@@ -368,7 +375,7 @@ export default function RegistrationForm() {
           {/* عدد الموظفين */}
           <div ref={fieldRefs.employees} className="md:col-span-2">
             <OptionPills
-              label="عدد الموظفين"
+              label="عدد الموظفين في الشركة"
               required
               name="employees"
               options={[
@@ -382,6 +389,24 @@ export default function RegistrationForm() {
             />
             {errors.employees && (
               <div className={errorText}>{errors.employees}</div>
+            )}
+          </div>
+
+          {/* ملكية الحساب */}
+          <div ref={fieldRefs.accountOwnership} className="md:col-span-2">
+            <OptionPills
+              label="ملكية الحساب"
+              required
+              name="accountOwnership"
+              options={[
+                "حساب خاص بك",
+                "خاص بالشركة",
+              ]}
+              value={form.accountOwnership}
+              onChange={(val) => setForm({ ...form, accountOwnership: val })}
+            />
+            {errors.accountOwnership && (
+              <div className={errorText}>{errors.accountOwnership}</div>
             )}
           </div>
 
@@ -424,8 +449,7 @@ export default function RegistrationForm() {
               {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
             </motion.button>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              بالنقر على "إرسال الطلب"، أوافق على معالجة بياناتي لأغراض التقييم
-              والتواصل.
+              بالنقر على "إرسال الطلب"، أوافق على معالجة بياناتي لأغراض التسويق والتواصل.
             </p>
           </div>
         </form>

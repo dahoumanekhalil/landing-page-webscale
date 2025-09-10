@@ -1,0 +1,562 @@
+{
+  "designSystem": {
+    "name": "WEBSCALE Design System",
+    "version": "1.0.0",
+    "description": "Comprehensive design system for WEBSCALE landing page and event management platform",
+    "framework": {
+      "ui": "shadcn/ui",
+      "style": "new-york",
+      "cssFramework": "Tailwind CSS",
+      "iconLibrary": "Lucide React",
+      "animation": "AOS (Animate On Scroll)",
+      "formHandling": "React Hook Form + Yup"
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Poppins",
+        "fallback": "sans-serif",
+        "googleFonts": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      },
+      "fontWeights": {
+        "thin": 100,
+        "light": 200,
+        "normal": 300,
+        "medium": 400,
+        "semibold": 500,
+        "bold": 600,
+        "extrabold": 700,
+        "black": 800,
+        "extrablack": 900
+      },
+      "fontStyles": {
+        "normal": "normal",
+        "italic": "italic"
+      }
+    },
+    "colorScheme": {
+      "mode": "dark",
+      "supportsDarkMode": true,
+      "transition": "background-color 0.3s ease, color 0.3s ease"
+    },
+    "colors": {
+      "brand": {
+        "primary": "#FABC05",
+        "primaryHex": "#FABC05",
+        "primaryHSL": "0 0% 9%",
+        "primaryForeground": "0 0% 98%"
+      },
+      "custom": {
+        "primary": "#fbbc05",
+        "darkBg": "#111827",
+        "lightBg": "#f9fafb"
+      },
+      "light": {
+        "background": "0 0% 100%",
+        "foreground": "0 0% 3.9%",
+        "card": "0 0% 100%",
+        "cardForeground": "0 0% 3.9%",
+        "popover": "0 0% 100%",
+        "popoverForeground": "0 0% 3.9%",
+        "primary": "0 0% 9%",
+        "primaryForeground": "0 0% 98%",
+        "secondary": "0 0% 96.1%",
+        "secondaryForeground": "0 0% 9%",
+        "muted": "0 0% 96.1%",
+        "mutedForeground": "0 0% 45.1%",
+        "accent": "0 0% 96.1%",
+        "accentForeground": "0 0% 9%",
+        "destructive": "0 84.2% 60.2%",
+        "destructiveForeground": "0 0% 98%",
+        "border": "0 0% 89.8%",
+        "input": "0 0% 89.8%",
+        "ring": "0 0% 3.9%",
+        "chart1": "12 76% 61%",
+        "chart2": "173 58% 39%",
+        "chart3": "197 37% 24%",
+        "chart4": "43 74% 66%",
+        "chart5": "27 87% 67%"
+      },
+      "dark": {
+        "background": "0 0% 3.9%",
+        "foreground": "0 0% 98%",
+        "card": "0 0% 3.9%",
+        "cardForeground": "0 0% 98%",
+        "popover": "0 0% 3.9%",
+        "popoverForeground": "0 0% 98%",
+        "primary": "0 0% 98%",
+        "primaryForeground": "0 0% 9%",
+        "secondary": "0 0% 14.9%",
+        "secondaryForeground": "0 0% 98%",
+        "muted": "0 0% 14.9%",
+        "mutedForeground": "0 0% 63.9%",
+        "accent": "0 0% 14.9%",
+        "accentForeground": "0 0% 98%",
+        "destructive": "0 62.8% 30.6%",
+        "destructiveForeground": "0 0% 98%",
+        "border": "0 0% 14.9%",
+        "input": "0 0% 14.9%",
+        "ring": "0 0% 83.1%",
+        "chart1": "220 70% 50%",
+        "chart2": "160 60% 45%",
+        "chart3": "30 80% 55%",
+        "chart4": "280 65% 60%",
+        "chart5": "340 75% 55%"
+      },
+      "sponsorLevels": {
+        "premium": {
+          "gradient": "from-yellow-400 to-yellow-600",
+          "description": "الراعي الماسي – PREMIUM SPONSOR"
+        },
+        "platinum": {
+          "gradient": "from-gray-300 to-gray-500",
+          "description": "الراعي البلاتيني – PLATINUM SPONSOR"
+        },
+        "gold": {
+          "gradient": "from-yellow-200 to-yellow-400",
+          "description": "الراعي الذهبي – GOLD SPONSOR"
+        },
+        "silver": {
+          "gradient": "from-gray-200 to-gray-400",
+          "description": "الراعي الفضي – SILVER SPONSOR"
+        }
+      }
+    },
+    "spacing": {
+      "radius": {
+        "sm": "calc(var(--radius) - 4px)",
+        "md": "calc(var(--radius) - 2px)",
+        "lg": "var(--radius)",
+        "default": "0.5rem"
+      },
+      "container": {
+        "padding": "px-4",
+        "maxWidth": "max-w-6xl",
+        "margin": "mx-auto"
+      }
+    },
+    "animations": {
+      "marquee": {
+        "duration": "20s",
+        "timing": "linear",
+        "iteration": "infinite",
+        "keyframes": {
+          "0%": "translateX(0%)",
+          "100%": "translateX(-50%)"
+        }
+      },
+      "aos": {
+        "duration": 1000,
+        "once": true
+      },
+      "transitions": {
+        "default": "transition-colors duration-300",
+        "fast": "transition-all duration-100",
+        "medium": "transition-all duration-200",
+        "slow": "transition-all duration-300"
+      }
+    },
+    "components": {
+      "button": {
+        "variants": {
+          "default": "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "destructive": "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+          "outline": "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "secondary": "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+          "ghost": "hover:bg-accent hover:text-accent-foreground",
+          "link": "text-primary underline-offset-4 hover:underline"
+        },
+        "sizes": {
+          "default": "h-9 px-4 py-2",
+          "sm": "h-8 rounded-md px-3 text-xs",
+          "lg": "h-10 rounded-md px-8",
+          "icon": "h-9 w-9"
+        },
+        "baseClasses": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+      },
+      "card": {
+        "base": "rounded-xl border bg-card text-card-foreground shadow",
+        "header": "flex flex-col space-y-1.5 p-6",
+        "title": "font-semibold leading-none tracking-tight",
+        "description": "text-sm text-muted-foreground",
+        "content": "p-6 pt-0",
+        "footer": "flex items-center p-6 pt-0"
+      },
+      "input": {
+        "baseClasses": "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+      },
+      "dialog": {
+        "overlay": "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "content": "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
+        "header": "flex flex-col space-y-1.5 text-center sm:text-left",
+        "footer": "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+        "title": "text-lg font-semibold leading-none tracking-tight",
+        "description": "text-sm text-muted-foreground"
+      },
+      "select": {
+        "trigger": "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+        "content": "relative z-50 max-h-[--radix-select-content-available-height] min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-select-content-transform-origin]",
+        "item": "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+      }
+    },
+    "layout": {
+      "navbar": {
+        "position": "sticky top-0 z-50",
+        "background": "bg-white/80 border-neutral-300 text-neutral-800 dark:bg-neutral-900/80 dark:border-neutral-700 dark:text-neutral-100",
+        "backdrop": "backdrop-blur-lg",
+        "border": "border-b",
+        "transition": "transition-colors duration-300",
+        "padding": "py-3"
+      },
+      "hero": {
+        "background": "bg-white dark:bg-neutral-900",
+        "transition": "transition-colors duration-300",
+        "textAlign": "text-center",
+        "padding": "px-4",
+        "margin": "mt-6 lg:mt-5"
+      },
+      "section": {
+        "padding": "py-20",
+        "maxWidth": "max-w-6xl",
+        "margin": "mx-auto",
+        "paddingHorizontal": "px-4"
+      }
+    },
+    "typography": {
+      "headings": {
+        "h1": "text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide",
+        "h2": "text-3xl sm:text-5xl font-bold",
+        "h3": "text-2xl font-semibold",
+        "h4": "text-xl font-semibold"
+      },
+      "text": {
+        "body": "text-lg",
+        "small": "text-sm",
+        "muted": "text-muted-foreground",
+        "primary": "text-primary"
+      }
+    },
+    "gradients": {
+      "brand": "bg-gradient-to-r from-[#fbbc05] to-[#e0bb57]",
+      "brandText": "bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text",
+      "button": "bg-gradient-to-r from-[#fbbc05] to-[#715a1a]",
+      "buttonHover": "bg-gradient-to-r from-[#fbbc05]/90 to-[#c89d1b]/90"
+    },
+    "shadows": {
+      "sm": "shadow-sm",
+      "md": "shadow",
+      "lg": "shadow-lg",
+      "xl": "shadow-xl",
+      "2xl": "shadow-2xl"
+    },
+    "borders": {
+      "default": "border border-input",
+      "neutral": "border-neutral-300 dark:border-neutral-700",
+      "sponsor": "border dark:border-neutral-700"
+    },
+    "hover": {
+      "scale": "hover:scale-105",
+      "opacity": "hover:opacity-90",
+      "translate": "hover:translate-x-1",
+      "shadow": "hover:shadow-2xl"
+    },
+    "responsive": {
+      "breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px"
+      },
+      "grid": {
+        "sponsors": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+        "features": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      }
+    },
+    "rtl": {
+      "support": true,
+      "direction": "dir=\"rtl\"",
+      "spacing": "rtl:space-x-reverse"
+    },
+    "accessibility": {
+      "focus": "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+      "srOnly": "sr-only",
+      "disabled": "disabled:pointer-events-none disabled:opacity-50"
+    }
+  },
+  "content": {
+    "brand": {
+      "name": "WEBSCALE",
+      "logo": "src/assets/logo.png",
+      "tagline": "ملتقى WEBSCALE حول استخدام الذكاء الاصطناعي في التجارة الإلكترونية"
+    },
+    "event": {
+      "name": "ملتقى WEBSCALE",
+      "date": "الثلاثاء 30 سبتمبر 2025",
+      "location": "المركز الثقافي بجامع الجزائر",
+      "description": "انضم إلينا في أكبر يوم دراسي مخصص لأرباب العمل حول تقنيات الذكاء الاصطناعي في التجارة الالكترونية"
+    },
+    "features": [
+      {
+        "icon": "BotMessageSquare",
+        "title": "يوم تطبيقي شامل",
+        "description": "ورش عمل وجلسات تطبيقية مع خبراء لمساعدتك على تحويل الذكاء الاصطناعي إلى نتائج عملية في التجارة الإلكترونية."
+      },
+      {
+        "icon": "Fingerprint",
+        "title": "شبكة علاقات نُخبوية",
+        "description": "فرصة للقاء أصحاب المؤسسات، المدراء، والخبراء، وبناء شراكات استراتيجية تعزز أعمالك."
+      },
+      {
+        "icon": "ShieldHalf",
+        "title": "محتوى محلي عالي القيمة",
+        "description": "دراسات حالة جزائرية قابلة للتطبيق ومحتوى موجه خصيصًا لسياق السوق المحلي."
+      },
+      {
+        "icon": "BatteryCharging",
+        "title": "أدوات وتقنيات حديثة",
+        "description": "التعرف على أحدث أدوات الذكاء الاصطناعي وأتمتة العمليات لزيادة الإنتاجية وتحسين تجربة الزبون."
+      },
+      {
+        "icon": "PlugZap",
+        "title": "فرص تطوير الأعمال",
+        "description": "عروض خاصة، ترقية العضوية في WEBSCALE، والوصول إلى موارد إضافية بعد الحدث."
+      },
+      {
+        "icon": "GlobeLock",
+        "title": "تحليلات ومؤشرات أداء",
+        "description": "متابعة أثر حضورك عبر تقارير مخصصة ومؤشرات أداء تساعدك على قياس التطور بعد الملتقى."
+      }
+    ],
+    "pricing": {
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "9,000 دج",
+          "badge": "15يوم مجاني",
+          "highlighted": false,
+          "features": [
+            "وصول محدود للمجتمع",
+            "متابعة تسجيلات اللقاءات الأسبوعية",
+            "الاستفادة من الدورات المسجلة عبر المنصة",
+            "إمكانية الوصول إلى المحتوى في أي وقت",
+            "إمكانية النشر و المشاركة في النقاشات",
+            "مشاهدة البودكاست"
+          ]
+        },
+        {
+          "name": "VIP",
+          "price": "35,000 دج",
+          "highlighted": true,
+          "features": [
+            "الوصول الكامل إلى المجتمع المغلق",
+            "حضور اللقاءات الأسبوعية مع الخبراء",
+            "متابعة تسجيلات اللقاءات الأسبوعية",
+            "الاستفادة من الدورات المسجلة عبر المنصة",
+            "إمكانية الوصول إلى المحتوى في أي وقت",
+            "إمكانية النشر و المشاركة في النقاشات",
+            "إمكانية طرح الأسئلة أثناء اللقاءات الأسبوعية",
+            "مشاهدة البودكاست"
+          ]
+        },
+        {
+          "name": "VIP+",
+          "price": "55,000 دج",
+          "highlighted": false,
+          "features": [
+            "الوصول الكامل إلى المجتمع المغلق",
+            "حضور اللقاءات الأسبوعية مع الخبراء",
+            "متابعة تسجيلات اللقاءات الأسبوعية",
+            "الاستفادة من الدورات المسجلة عبر المنصة",
+            "إمكانية الوصول إلى المحتوى في أي وقت",
+            "إمكانية النشر و المشاركة في النقاشات",
+            "إمكانية طرح الأسئلة أثناء اللقاءات الأسبوعية",
+            "المشاركة في الفعاليات الحضورية مجانا",
+            "مشاهدة البودكاست"
+          ]
+        },
+        {
+          "name": "الخطة المجانية",
+          "price": "free",
+          "highlighted": false,
+          "features": [
+            "بعض البثوث المجانية",
+            "دورة facebook ads مجانية",
+            "دورة مجانية في التسويق بالمحتوى",
+            "مشاهدة البودكاست"
+          ]
+        }
+      ]
+    },
+    "agenda": [
+      {
+        "time": "09:00 - 09:15",
+        "title": "كلمة ترحيبية",
+        "description": "كلمة ترحيبية وتعريف بالملتقى وأهدافه.",
+        "icon": "Mic"
+      },
+      {
+        "time": "09:15 - 09:45",
+        "title": "كلمة الرعاة",
+        "description": "عرض من الرعاة الرسميين للملتقى حول مساهماتهم ودعمهم.",
+        "icon": "Users"
+      },
+      {
+        "time": "09:45 - 10:30",
+        "title": "محاضرة 1: دراسة حالة",
+        "description": "عرض دراسة حالة ملهمة من أحد المشاريع الرائدة.",
+        "icon": "Presentation"
+      },
+      {
+        "time": "10:30 - 11:15",
+        "title": "محاضرة 2: دراسة حالة 2",
+        "description": "دراسة حالة ثانية تركز على الابتكار في الأعمال.",
+        "icon": "Presentation"
+      },
+      {
+        "time": "11:15 - 12:30",
+        "title": "محاضرات فردية",
+        "description": "محاضرات قصيرة يقدمها خبراء في مجالات متنوعة.",
+        "icon": "MessageSquare"
+      },
+      {
+        "time": "12:30 - 13:30",
+        "title": "استراحة",
+        "description": "استراحة غداء وفرصة للتعارف بين المشاركين.",
+        "icon": "Coffee"
+      },
+      {
+        "time": "13:30 - 14:15",
+        "title": "ورشة عمل تطبيقية",
+        "description": "تدريب عملي على أدوات وحلول تكنولوجية حديثة.",
+        "icon": "Wrench"
+      },
+      {
+        "time": "14:15 - 15:00",
+        "title": "محاضرة 3",
+        "description": "جلسة تفاعلية تركز على استراتيجيات نمو المؤسسات.",
+        "icon": "Presentation"
+      },
+      {
+        "time": "15:00 - 16:30",
+        "title": "محاضرات فردية ومداخلات",
+        "description": "مداخلات مفتوحة مع الحضور وخبراء الملتقى.",
+        "icon": "MessageSquare"
+      },
+      {
+        "time": "16:30 - 18:00",
+        "title": "تعارف وتشبيك علاقات",
+        "description": "جلسة مفتوحة للتعارف وبناء شراكات بين الحاضرين.",
+        "icon": "Handshake"
+      }
+    ]
+  },
+  "navigation": {
+    "event": {
+      "links": [
+        { "label": "الرئيسية", "href": "#hero" },
+        { "label": "عن Webscale", "href": "#about-webscale" },
+        { "label": "عن الملتقى", "href": "#about-event" },
+        { "label": "الأجندة", "href": "#agenda" },
+        { "label": "الرعاة", "href": "#sponsors" }
+      ],
+      "actions": [
+        { "label": "التسجيل", "href": "#register", "type": "primary" }
+      ]
+    },
+    "registration": {
+      "links": [
+        { "label": "الرئيسية", "href": "#hero" },
+        { "label": "الأسعار", "href": "#pricing" },
+        { "label": "الأسئلة الشائعة", "href": "#faq" },
+        { "label": "تواصل معنا", "href": "#contact" }
+      ],
+      "actions": [
+        { "label": "إشترك الان", "href": "#register", "type": "primary" }
+      ]
+    }
+  },
+  "assets": {
+    "logos": {
+      "main": "src/assets/logo.png",
+      "sponsors": {
+        "premium": "src/assets/sponsors/premium.png",
+        "gold": "src/assets/sponsors/gold.png",
+        "platinum": "src/assets/sponsors/platinum.png",
+        "silver": "src/assets/sponsors/silver.png"
+      }
+    },
+    "images": {
+      "profilePictures": [
+        "src/assets/profile-pictures/user1.jpg",
+        "src/assets/profile-pictures/user2.jpg",
+        "src/assets/profile-pictures/user3.jpg",
+        "src/assets/profile-pictures/user4.jpg",
+        "src/assets/profile-pictures/user5.jpg",
+        "src/assets/profile-pictures/user6.jpg"
+      ],
+      "gallery": [
+        "src/assets/1.png",
+        "src/assets/2.png",
+        "src/assets/3.png",
+        "src/assets/4.png",
+        "src/assets/5.png",
+        "src/assets/6.png",
+        "src/assets/7.png",
+        "src/assets/8.png"
+      ],
+      "videos": [
+        "src/assets/video1.mp4",
+        "src/assets/video2.mp4"
+      ]
+    }
+  },
+  "dependencies": {
+    "ui": [
+      "@radix-ui/react-checkbox",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-label",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-radio-group",
+      "@radix-ui/react-scroll-area",
+      "@radix-ui/react-select",
+      "@radix-ui/react-slot"
+    ],
+    "forms": [
+      "react-hook-form",
+      "@hookform/resolvers",
+      "yup"
+    ],
+    "animations": [
+      "aos",
+      "framer-motion",
+      "react-fast-marquee"
+    ],
+    "icons": [
+      "lucide-react"
+    ],
+    "utilities": [
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+      "tailwindcss-animate"
+    ],
+    "routing": [
+      "react-router-dom",
+      "react-scroll"
+    ],
+    "other": [
+      "react-select",
+      "cmdk"
+    ]
+  },
+  "build": {
+    "bundler": "Vite",
+    "framework": "React 18",
+    "language": "JavaScript (JSX)",
+    "styling": "Tailwind CSS",
+    "postcss": true,
+    "autoprefixer": true
+  }
+}
+
+
