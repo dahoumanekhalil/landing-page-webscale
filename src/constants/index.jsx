@@ -1,15 +1,9 @@
 // src/constants/index.jsx 
-import { BotMessageSquare } from "lucide-react";
-import { BatteryCharging } from "lucide-react";
-import { Fingerprint } from "lucide-react";
-import { ShieldHalf } from "lucide-react";
-import { PlugZap } from "lucide-react";
-import { GlobeLock } from "lucide-react";
-import premiumLogo from "../assets/sponsors/premium.png";
+import { BatteryCharging, BotMessageSquare, Coffee, Fingerprint, GlobeLock, Handshake, MessageSquare, Mic, PlugZap, Presentation, ShieldHalf, Users, Wrench } from "lucide-react";
 import goldLogo from "../assets/sponsors/gold.png";
 import platinumLogo from "../assets/sponsors/platinum.png";
+import premiumLogo from "../assets/sponsors/premium.png";
 import silverLogo from "../assets/sponsors/silver.png";
-import { Clock, Mic, Handshake, Presentation, Users, Coffee, Wrench, MessageSquare } from "lucide-react";
 
 
 import user1 from "../assets/profile-pictures/user1.jpg";
@@ -258,7 +252,8 @@ export const plans = [
       "متابعة تسجيلات اللقاءات الأسبوعية",
       "الاستفادة من الدورات المسجلة عبر المنصة",
       "إمكانية الوصول إلى المحتوى في أي وقت",
-      "إمكانية النشر و المشاركة في النقاشات"
+      "إمكانية النشر و المشاركة في النقاشات",
+      "مشاهدة البودكاست"
     ],
     highlighted: false,
   },
@@ -273,6 +268,7 @@ export const plans = [
       "إمكانية الوصول إلى المحتوى في أي وقت",
       "إمكانية النشر و المشاركة في النقاشات",
       "إمكانية طرح الأسئلة أثناء اللقاءات الأسبوعية",
+      "مشاهدة البودكاست"
     ],
     highlighted: true, // ⭐ البطاقة الأساسية
   },
@@ -288,6 +284,7 @@ export const plans = [
       "إمكانية النشر و المشاركة في النقاشات",
       "إمكانية طرح الأسئلة أثناء اللقاءات الأسبوعية",
       "المشاركة في الفعاليات الحضورية مجانا",
+      "مشاهدة البودكاست"
     ],
     highlighted: false,
   },
@@ -298,6 +295,7 @@ export const plans = [
       "بعض البثوث المجانية",
       "دورة facebook ads مجانية",
       "دورة مجانية في التسويق بالمحتوى",
+      "مشاهدة البودكاست",
       // "الاستفادة من الدورات المسجلة عبر المنصة",
       // "إمكانية الوصول إلى المحتوى في أي وقت",
       // "إمكانية النشر و المشاركة في النقاشات",
