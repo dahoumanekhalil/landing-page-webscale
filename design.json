@@ -289,6 +289,35 @@
       "logo": "src/assets/logo.png",
       "tagline": "ملتقى WEBSCALE حول استخدام الذكاء الاصطناعي في التجارة الإلكترونية"
     },
+    "investor": {
+      "welcomeMessage": "مرحبا بك، اليوم webscale تفتح الباب للمستثمرين المهتمين بالانضمام إلى رحلتنا نحو بناء مجتمع قوي لأصحاب المؤسسات ورواد الأعمال.",
+      "description": "نضع بين أيديكم هذا الاستبيان لمعرفة الأسباب التي تجعلكم تهتمون بالاستثمار في webscale",
+      "form": {
+        "title": "استبيان اهتمام المستثمرين",
+        "fields": {
+          "fullName": {
+            "label": "الإسم و اللقب",
+            "placeholder": "أدخل اسمك الكامل",
+            "required": true
+          },
+          "whatsappNumber": {
+            "label": "رقم الواتساب",
+            "placeholder": "مثال: +213 123 456 789",
+            "required": true
+          },
+          "investmentReasons": {
+            "label": "ما هي الأسباب التي تجعلكم تهتمون بالاستثمار في webscale؟",
+            "placeholder": "يرجى توضيح أسباب اهتمامكم بالاستثمار في webscale...",
+            "required": true
+          }
+        },
+        "submitButton": "إرسال الاستبيان",
+        "submittingButton": "جاري الإرسال...",
+        "successMessage": "شكراً لاهتمامكم! سنتواصل معكم قريباً.",
+        "errorMessage": "حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى."
+      },
+      "additionalInfo": "سنراجع استبيانكم وسنتواصل معكم في أقرب وقت ممكن لمناقشة فرص الاستثمار المتاحة"
+    },
     "event": {
       "name": "ملتقى WEBSCALE",
       "date": "الثلاثاء 30 سبتمبر 2025",
@@ -451,6 +480,16 @@
     ]
   },
   "navigation": {
+    "investor": {
+      "links": [
+        { "label": "الرئيسية", "href": "#hero" },
+        { "label": "عن Webscale", "href": "#about" },
+        { "label": "الاستثمار", "href": "#investment" }
+      ],
+      "actions": [
+        { "label": "تواصل معنا", "href": "#contact", "type": "primary" }
+      ]
+    },
     "event": {
       "links": [
         { "label": "الرئيسية", "href": "#hero" },

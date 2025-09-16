@@ -1,6 +1,7 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import EventLandingPage from "./pages/EventLandingPage";
+import InvestorLandingPage from "./pages/InvestorLandingPage";
 import Registration from "./pages/Registration";
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/event" element={<EventLandingPage />} />
+        <Route path="/investor" element={<InvestorLandingPage />} />
         <Route path="/" element={<Registration />} />
       </Routes>
     </Router>
