@@ -1,6 +1,7 @@
 // src/components/shared/Navbar.jsx
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = ({ navConfig }) => {
@@ -36,19 +37,25 @@ const Navbar = ({ navConfig }) => {
         
         {/* 🔹 Logo */}
         <div className="flex items-center flex-shrink-0">
-          <a href="#hero" className="flex items-center hover:text-[#FABC05] transition-colors duration-200 font-medium">
+          <Link to="/" className="flex items-center hover:text-[#FABC05] transition-colors duration-200 font-medium">
             <img className="h-10 w-10 mr-2 rounded-md" src={logo} alt="Logo" />
             <span className="text-xl font-bold tracking-tight">WEBSCALE</span>
-          </a>
+          </Link>
         </div>
 
         {/* 🔹 Desktop Menu */}
         <ul className="hidden lg:flex ml-14 space-x-12 rtl:space-x-reverse">
           {links.map((item, index) => (
             <li key={index}>
-              <a href={item.href} className="hover:text-[#FABC05] transition-colors duration-200 font-medium">
-                {item.label}
-              </a>
+              {item.href.startsWith('/') ? (
+                <Link to={item.href} className="hover:text-[#FABC05] transition-colors duration-200 font-medium">
+                  {item.label}
+                </Link>
+              ) : (
+                <a href={item.href} className="hover:text-[#FABC05] transition-colors duration-200 font-medium">
+                  {item.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -56,17 +63,31 @@ const Navbar = ({ navConfig }) => {
         {/* 🔹 Desktop Actions */}
         <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
           {actions.map((action, index) => (
-            <a
-              key={index}
-              href={action.href}
-              className={
-                action.type === "primary"
-                  ? "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 bg-gradient-to-r from-[#FABC05]/90 to-[#c89d1b]/90 text-neutral-100 font-medium shadow-sm hover:scale-105 transition-all duration-100"
-                  : "py-2 px-4 rounded-md bg-neutral-200 text-neutral-700 dark:text-[#FABC05] dark:bg-neutral-600 font-medium shadow-sm hover:opacity-90 transition-opacity"
-              }
-            >
-              {action.label}
-            </a>
+            action.href.startsWith('/') ? (
+              <Link
+                key={index}
+                to={action.href}
+                className={
+                  action.type === "primary"
+                    ? "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 bg-gradient-to-r from-[#FABC05]/90 to-[#c89d1b]/90 text-neutral-100 font-medium shadow-sm hover:scale-105 transition-all duration-100"
+                    : "py-2 px-4 rounded-md bg-neutral-200 text-neutral-700 dark:text-[#FABC05] dark:bg-neutral-600 font-medium shadow-sm hover:opacity-90 transition-opacity"
+                }
+              >
+                {action.label}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                href={action.href}
+                className={
+                  action.type === "primary"
+                    ? "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-500 bg-gradient-to-r from-[#FABC05]/90 to-[#c89d1b]/90 text-neutral-100 font-medium shadow-sm hover:scale-105 transition-all duration-100"
+                    : "py-2 px-4 rounded-md bg-neutral-200 text-neutral-700 dark:text-[#FABC05] dark:bg-neutral-600 font-medium shadow-sm hover:opacity-90 transition-opacity"
+                }
+              >
+                {action.label}
+              </a>
+            )
           ))}
 
           {/* DarkMode Toggle */}
@@ -96,29 +117,55 @@ const Navbar = ({ navConfig }) => {
                      transition-colors duration-300 border-t border-neutral-300 dark:border-neutral-700"
         >
           {links.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              className="hover:text-[#FABC05] transition-colors"
-              onClick={() => setMobileDrawerOpen(false)}
-            >
-              {item.label}
-            </a>
+            item.href.startsWith('/') ? (
+              <Link
+                key={index}
+                to={item.href}
+                className="hover:text-[#FABC05] transition-colors"
+                onClick={() => setMobileDrawerOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                href={item.href}
+                className="hover:text-[#FABC05] transition-colors"
+                onClick={() => setMobileDrawerOpen(false)}
+              >
+                {item.label}
+              </a>
+            )
           ))}
 
           {actions.map((action, index) => (
-            <a
-              key={index}
-              href={action.href}
-              className={
-                action.type === "primary"
-                  ? "py-2 px-4 rounded-md bg-gradient-to-r from-[#FABC05] to-[#977b25] text-white font-medium shadow-sm hover:opacity-90 transition"
-                  : "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-neutral-100 font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              }
-              onClick={() => setMobileDrawerOpen(false)}
-            >
-              {action.label}
-            </a>
+            action.href.startsWith('/') ? (
+              <Link
+                key={index}
+                to={action.href}
+                className={
+                  action.type === "primary"
+                    ? "py-2 px-4 rounded-md bg-gradient-to-r from-[#FABC05] to-[#977b25] text-white font-medium shadow-sm hover:opacity-90 transition"
+                    : "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-neutral-100 font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+                }
+                onClick={() => setMobileDrawerOpen(false)}
+              >
+                {action.label}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                href={action.href}
+                className={
+                  action.type === "primary"
+                    ? "py-2 px-4 rounded-md bg-gradient-to-r from-[#FABC05] to-[#977b25] text-white font-medium shadow-sm hover:opacity-90 transition"
+                    : "py-2 px-4 rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-neutral-100 font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+                }
+                onClick={() => setMobileDrawerOpen(false)}
+              >
+                {action.label}
+              </a>
+            )
           ))}
 
           {/* Dark Mode Toggle */}
