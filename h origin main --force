@@ -1,0 +1,15 @@
+*   [33m5591237[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #1 from YasserCherfaoui/main
+[31m|[m[32m\[m  
+[31m|[m *   [33md006b43[m[33m ([m[1;31myasser/main[m[33m)[m Merge branch 'main' of https://github.com/dahoumanekhalil/landing-page-webscale
+[31m|[m [33m|[m[31m\[m  
+[31m|[m [33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m   
+* [33m|[m [33m05b7f39[m Update ContactSection.jsx
+[34m|[m * [33meb96d91[m Add design system configuration and update registration components
+[34m|[m[34m/[m  
+* [33m72d3c8d[m adding error hundling in form rigesration
+* [33m0fb0b6f[m fix cards
+* [33m16d7bbc[m add some edited in price section
+* [33m29e3da3[m adding input wilaya in registration form
+* [33m5ba3a5b[m try to fixing vercel linking pages
+* [33mab98d00[m change main badge text

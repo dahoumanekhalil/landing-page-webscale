@@ -1,8 +1,8 @@
 // src/components/sponsoring/AboutEvent.jsx
-import { Lightbulb, Target, Users, Rocket, Award, Star, Briefcase } from "lucide-react";
 import AOS from "aos";
-import { useEffect } from "react";
 import "aos/dist/aos.css";
+import { Award, Briefcase, Lightbulb, Rocket, Star, Target, Users } from "lucide-react";
+import { useEffect } from "react";
 
 const AboutEvent = () => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const AboutEvent = () => {
 
   const results = [
     "حضور نوعي لا يقل عن 1200 مشارك + 200 VIP.",
-    "5+ رعاة عبر مستويات رعاية (Premium / Platinum / Gold / Silver).",
+    // "5+ رعاة عبر مستويات رعاية (Premium / Platinum / Gold / Silver).",
     "تغطيات إعلامية ومخرجات مكتوبة (كتيّب توصيات ما بعد الحدث).",
     "دعم حكومي رسمي للمبادرة.",
   ];

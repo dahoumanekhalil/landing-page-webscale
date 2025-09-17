@@ -1,7 +1,8 @@
 // src/components/registration/Hero.jsx
 import { motion } from "framer-motion";
-import { scrollToSection } from "../../utils/scroll";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { scrollToSection } from "../../utils/scroll";
 
 const Hero = () => {
   return (
@@ -45,6 +46,17 @@ const Hero = () => {
               >
                 قدِّم طلب الانضمام
               </motion.button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/investor"
+                  className="inline-block rounded-xl border-2 border-[#FABC05] text-[#FABC05] font-semibold px-6 py-3 text-sm shadow-lg hover:bg-[#FABC05] hover:text-black transition-all"
+                >
+                  فرص الاستثمار
+                </Link>
+              </motion.div>
               {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
