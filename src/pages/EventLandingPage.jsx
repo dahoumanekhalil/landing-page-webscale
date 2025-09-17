@@ -1,16 +1,14 @@
 // src/pages/EventLandingPage.jsx
-import { useState, useEffect } from "react";
-import Navbar from "../components/shared/Navbar";
-import HeroSection from "../components/sponsoring/HeroSection";
-import FeatureSection from "../components/sponsoring/FeatureSection";
-import Agenda from "../components/sponsoring/Agenda";
-import Sponsors from "../components/sponsoring/Sponsors";
-import AboutWebscale from "../components/sponsoring/AboutWebscale";
-import AboutEvent from "../components/sponsoring/AboutEvent";
-import UnifiedRegistrationForm from "../components/sponsoring/UnifiedRegistrationForm";
-import LogosCarousel from "../components/sponsoring/PartnersMarquee";
-import Footer from "../components/shared/Footer";
 import { communityLinks, eventNav, eventPlatformLinks, eventResourcesLinks } from "@/constants";
+import { useEffect, useState } from "react";
+import Footer from "../components/shared/Footer";
+import Navbar from "../components/shared/Navbar";
+import AboutEvent from "../components/sponsoring/AboutEvent";
+import AboutWebscale from "../components/sponsoring/AboutWebscale";
+import FeatureSection from "../components/sponsoring/FeatureSection";
+import HeroSection from "../components/sponsoring/HeroSection";
+import LogosCarousel from "../components/sponsoring/PartnersMarquee";
+import UnifiedRegistrationForm from "../components/sponsoring/UnifiedRegistrationForm";
 
 const EventLandingPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,8 +29,8 @@ const EventLandingPage = () => {
         <HeroSection />
         <AboutWebscale />
         <AboutEvent />
-        <Agenda />
-        <Sponsors />
+        {/* <Agenda /> */}
+        {/* <Sponsors /> */}
         <FeatureSection />
         <UnifiedRegistrationForm mode="inline" />
         <LogosCarousel />

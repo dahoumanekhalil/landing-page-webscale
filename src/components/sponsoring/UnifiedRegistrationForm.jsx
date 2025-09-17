@@ -1,13 +1,13 @@
 // src/components/sponsoring/UnifiedRegistrationForm.jsx
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import AlgeriaWilayas from "../shared/AlgeriaWilayas";
 
 const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
@@ -149,7 +149,7 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
       </div>
 
       {/* القسم 3 – الاهتمامات */}
-      <div>
+      <div className="hidden">
         <h4 className="font-bold mb-4 text-lg">القسم 3 – الاهتمامات وفرص الرعاية</h4>
         <Label>نوع الرعاية</Label>
         <div className="flex flex-wrap gap-3 mb-4">
@@ -194,7 +194,7 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
       {/* القسم 5 – الموافقة */}
       <div className="flex items-center gap-2">
         <Checkbox checked={formData.consent} onCheckedChange={(val) => setFormData({...formData, consent: val})} />
-        <Label>أوافق على أن يتواصل معي فريق WEBSCALE لمناقشة فرص الرعاية</Label>
+        <Label>أؤكد حضوري للفعالية في حالة قبولي للحضور</Label>
       </div>
 
       {/* رسائل الحالة */}
