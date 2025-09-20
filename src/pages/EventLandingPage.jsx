@@ -7,11 +7,12 @@ import AboutEvent from "../components/sponsoring/AboutEvent";
 import AboutWebscale from "../components/sponsoring/AboutWebscale";
 import FeatureSection from "../components/sponsoring/FeatureSection";
 import HeroSection from "../components/sponsoring/HeroSection";
-import LogosCarousel from "../components/sponsoring/PartnersMarquee";
+import ImportanceSection from "../components/sponsoring/ImportanceSection";
+import RegistrationTitle from "../components/sponsoring/RegistrationTitle";
 import UnifiedRegistrationForm from "../components/sponsoring/UnifiedRegistrationForm";
 
 const EventLandingPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -27,13 +28,14 @@ const EventLandingPage = () => {
       {/* <Navbar darkMode={darkMode} setDarkMode={setDarkMode} /> */}
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <HeroSection />
+        <ImportanceSection />
         <AboutWebscale />
         <AboutEvent />
         {/* <Agenda /> */}
         {/* <Sponsors /> */}
         <FeatureSection />
+        <RegistrationTitle />
         <UnifiedRegistrationForm mode="inline" />
-        <LogosCarousel />
         {/* <Footer /> */}
         <Footer
   resourcesLinks={eventResourcesLinks}

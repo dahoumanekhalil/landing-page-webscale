@@ -15,8 +15,7 @@ const AboutWebscale = () => {
           من هي <span className="text-[#fbbc05]">واب سكايل؟</span>
         </h2>
         <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed text-center">
-          WEBSCALE منصة جزائرية تمكّن أصحاب المؤسسات ومسيريها من تحويل التكنولوجيا
-          والذكاء الاصطناعي إلى ابتكار عملي لتحقيق أقصى نمو في مشاريعهم.
+          ملتقى تقني يجمع اصحاب الشركات ومسيريها مع الخبراء لمناقشة أحدث حلول التكنولوجيا والابتكار.
         </p>
 
         {/* الرؤية */}
