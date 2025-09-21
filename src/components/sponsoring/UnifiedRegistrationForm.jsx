@@ -219,7 +219,7 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
               <div className="flex justify-end">
                 <button onClick={onClose} className="text-lg">✕</button>
               </div>
-              <CardTitle className="text-center text-2xl font-bold mb-6">استمارة تسجيل الرعاة <span className="text-[#fbbc05]">ملتقى WEBSCALE</span></CardTitle>
+              <CardTitle className="text-center text-2xl font-bold mb-6">استمارة تسجيل الحضور <span className="text-[#fbbc05]">ملتقى WEBSCALE</span></CardTitle>
               {FormUI}
             </motion.section>
           </motion.div>
@@ -233,7 +233,7 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
       <div className="max-w-4xl mx-auto">
         <Card className="bg-white dark:bg-neutral-800 border-none shadow-xl">
           <CardHeader>
-            <CardTitle className="text-center text-3xl font-bold">استمارة تسجيل الرعاة <span className="text-[#fbbc05]">ملتقى WEBSCALE</span></CardTitle>
+            <CardTitle className="text-center text-3xl font-bold">استمارة تسجيل الحضور <span className="text-[#fbbc05]">ملتقى WEBSCALE</span></CardTitle>
           </CardHeader>
           <CardContent>{FormUI}</CardContent>
         </Card>
