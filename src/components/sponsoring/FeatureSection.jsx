@@ -7,10 +7,10 @@ const FeatureSection = () => {
       {/* title */}
       <div className="text-center">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-6 lg:mt-12 tracking-wide font-bold">
-          لماذا ترعى
+          لماذا تحضر
           <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">
             {" "}الحدث؟
-          </span>
+        </span>
           
         </h2>
         <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
