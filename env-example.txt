@@ -1,0 +1,17 @@
+# Google Apps Script URLs for form submissions
+# Replace YOUR_SCRIPT_ID with your actual Google Apps Script deployment ID
+
+# Sponsorship Registration Form Script URL
+VITE_REGISTRATION_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+
+# Other form script URL (if needed)
+VITE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_OTHER_SCRIPT_ID/exec
+
+# Instructions:
+# 1. Create a .env file in your project root
+# 2. Copy the content above to your .env file
+# 3. Replace YOUR_SCRIPT_ID with your actual Google Apps Script deployment ID
+# 4. The script ID is the long string in your Apps Script Web App URL
+# 5. Example: https://script.google.com/macros/s/AKfycby1234567890abcdef/exec
+#    In this case, YOUR_SCRIPT_ID = AKfycby1234567890abcdef
+

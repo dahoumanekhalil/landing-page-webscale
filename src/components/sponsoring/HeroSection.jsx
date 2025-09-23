@@ -1,5 +1,5 @@
 // src/components/sponsoring/HeroSection.jsx
-import { CalendarDays, Edit3 } from "lucide-react";
+import { Edit3 } from "lucide-react";
 import { useEffect, useState } from "react";
 import UnifiedRegistrationForm from "./UnifiedRegistrationForm"; // الفورم الجديد
 // import video1 from "../assets/video1.mp4";
@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <section
       dir="rtl"
-      className="flex flex-col items-center mt-6 lg:mt-5 text-center px-4 bg-white dark:bg-neutral-900 transition-colors duration-300"
+      className="flex flex-col items-center mt-6 lg:mt-5 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 bg-white dark:bg-neutral-900 transition-colors duration-300"
       id="hero"
     >
       {/* العنوان */}

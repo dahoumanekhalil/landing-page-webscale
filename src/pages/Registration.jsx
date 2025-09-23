@@ -1,16 +1,28 @@
 // src/pages/Registration.jsx
-import Navbar from "../components/shared/Navbar";
-import Footer from "../components/shared/Footer";
-import Hero from "@/components/registration/Hero";
 import ApplicationForm from "@/components/registration/ApplicationForm";
-import FAQSection from "@/components/registration/FAQSection";
 import ContactSection from "@/components/registration/ContactSection";
+import FAQSection from "@/components/registration/FAQSection";
+import Hero from "@/components/registration/Hero";
 import PricingSection from "@/components/registration/PricingSection";
-import { communityLinks, footerLinksRegistration, registrationNav, registrationPlatformLinks, registrationResourcesLinks } from "@/constants";
+import { communityLinks, registrationNav, registrationPlatformLinks, registrationResourcesLinks } from "@/constants";
+import { Helmet } from "react-helmet-async";
+import Footer from "../components/shared/Footer";
+import Navbar from "../components/shared/Navbar";
 
 export default function Registration() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>WEBSCALE - مجتمع حصري لأرباب العمل في الجزائر</title>
+        <meta name="description" content="مجتمع مدفوع ومغلق لأصحاب الشركات والمسيرين في الجزائر. محتوى عملي، جلسات مباشرة أسبوعية، وأحداث حضورية مع شبكة علاقات عالية القيمة." />
+        <meta name="keywords" content="webscale, مجتمع أرباب العمل, الجزائر, شركات, مسيرين, شبكة علاقات, جلسات مباشرة, أحداث حضورية" />
+        <meta property="og:title" content="WEBSCALE - مجتمع حصري لأرباب العمل في الجزائر" />
+        <meta property="og:description" content="مجتمع مدفوع ومغلق لأصحاب الشركات والمسيرين في الجزائر. محتوى عملي، جلسات مباشرة أسبوعية، وأحداث حضورية مع شبكة علاقات عالية القيمة." />
+        <meta property="og:url" content="https://webscale.dz/" />
+        <meta property="twitter:title" content="WEBSCALE - مجتمع حصري لأرباب العمل في الجزائر" />
+        <meta property="twitter:description" content="مجتمع مدفوع ومغلق لأصحاب الشركات والمسيرين في الجزائر. محتوى عملي، جلسات مباشرة أسبوعية، وأحداث حضورية مع شبكة علاقات عالية القيمة." />
+        <link rel="canonical" href="https://webscale.dz/" />
+      </Helmet>
       <Navbar navConfig={registrationNav} />
 
       <Hero/>
