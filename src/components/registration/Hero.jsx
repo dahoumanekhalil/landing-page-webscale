@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="absolute bottom-32 left-0 w-72 h-72 bg-[#FABC05]/30 rounded-full blur-3xl opacity-60 animate-pulse"></div>
       </div>
 
-      <div className="container relative mx-auto px-4 py-16 md:py-24">
+      <div className="container relative mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           
           {/* النص */}
