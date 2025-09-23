@@ -68,15 +68,6 @@ const HeroSection = () => {
           <Edit3 size={20} />
           سجل الآن
         </button>
-
-        {/* زر جدول الفعاليات */}
-        <a
-          href="#agenda"
-          className="flex items-center gap-2 py-3 px-8 rounded-md border border-neutral-500 dark:border-neutral-300 hover:bg-neutral-100 text-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
-        >
-          <CalendarDays size={20} />
-          جدول الفعاليات
-        </a>
       </div>
 
       {/* الفيديوهات (مخفية حاليا) */}
