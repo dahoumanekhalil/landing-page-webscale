@@ -7,9 +7,9 @@ const FeatureSection = () => {
       {/* title */}
       <div className="text-center">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-6 lg:mt-12 tracking-wide font-bold">
-          لماذا ترعى
+          لماذا حضورك مهم
           <span className="bg-gradient-to-r from-[#fbbc05] to-[#e0bb57] text-transparent bg-clip-text">
-            {" "}الحدث؟
+            {" "}للحدث؟
           </span>
           
         </h2>
