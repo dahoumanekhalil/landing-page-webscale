@@ -10,11 +10,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import AlgeriaWilayas from "../shared/AlgeriaWilayas";
 
-const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
-// const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+const SCRIPT_URL = "https://crmgo.webscale.dz/api/v1/public/forms/e8558b7d-60ae-4d89-9be3-1a4ebe4175b2/submit";
 
 export default function UnifiedRegistrationForm({ mode = "inline", isOpen = false, onClose }) {
   const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [showOtherSector, setShowOtherSector] = useState(false);
   const [showOtherSponsorType, setShowOtherSponsorType] = useState(false);
   const [showOtherGoal, setShowOtherGoal] = useState(false);
@@ -65,14 +65,35 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
       return;
     }
     setStatus("loading");
+    setErrorMessage(""); // Clear any previous error messages
     try {
-      const formPayload = new FormData();
-      Object.entries(formData).forEach(([key, val]) => {
-        formPayload.append(key, Array.isArray(val) ? val.join(", ") : val);
+      // Map form data to the required Arabic field names
+      const payload = {
+        user_id: "public-user",
+        data: {
+          "اسم الشركة / المؤسسة": formData.companyName,
+          "المجال أو القطاع": formData.sector === "أخرى" ? formData.otherSector : formData.sector,
+          "حجم الشركة": formData.companySize,
+          "الموقع الجغرافي / الولاية": formData.wilaya,
+          "الاسم الكامل": formData.fullName,
+          "المنصب / الدور": formData.role,
+          "رقم الهاتف": formData.phone,
+          "البريد الإلكتروني": formData.email,
+          "ملاحظات أو متطلبات خاصة": formData.notes
+        }
+      };
+
+      const res = await fetch(SCRIPT_URL, { 
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
       });
-      const res = await fetch(SCRIPT_URL, { method: "POST", body: formPayload });
+      
       if (res.ok) {
         setStatus("success");
+        setErrorMessage(""); // Clear error message on success
         setTimeout(() => {
           setStatus("idle");
           if (mode === "modal") onClose?.();
@@ -95,8 +116,22 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
           notes: "",
           consent: false
         });
-      } else setStatus("error");
+      } else {
+        // Try to parse error response
+        try {
+          const errorData = await res.json();
+          if (errorData.error) {
+            setErrorMessage(errorData.error);
+          } else {
+            setErrorMessage("حدث خطأ أثناء الإرسال");
+          }
+        } catch {
+          setErrorMessage("حدث خطأ أثناء الإرسال");
+        }
+        setStatus("error");
+      }
     } catch {
+      setErrorMessage("حدث خطأ في الاتصال بالخادم");
       setStatus("error");
     }
   };
@@ -200,7 +235,16 @@ export default function UnifiedRegistrationForm({ mode = "inline", isOpen = fals
       {/* رسائل الحالة */}
       {status === "loading" && <p className="text-blue-500">⏳ جاري الإرسال...</p>}
       {status === "success" && <p className="text-green-500">✅ تم إرسال بياناتك!</p>}
-      {status === "error" && <p className="text-red-500">⚠️ حدث خطأ أثناء الإرسال</p>}  
+      {status === "error" && (
+        <div className="text-red-500">
+          <p className="font-semibold">⚠️ حدث خطأ أثناء الإرسال</p>
+          {errorMessage && (
+            <p className="mt-2 text-sm bg-red-50 dark:bg-red-900/20 p-3 rounded-md border border-red-200 dark:border-red-800">
+              {errorMessage}
+            </p>
+          )}
+        </div>
+      )}  
 
       {/* زر الإرسال */}
       <Button type="submit" disabled={status === "loading"} className="w-full bg-gradient-to-r from-[#fbbc05] to-[#f3ac39] hover:scale-[1.01] text-white">
