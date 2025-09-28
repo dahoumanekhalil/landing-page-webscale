@@ -68,6 +68,8 @@ export default function SubmissionDetails() {
     switch (status) {
       case 'approved':
         return 'text-green-600 bg-green-100';
+      case 'confirmed':
+        return 'text-green-600 bg-green-100';
       case 'pending':
         return 'text-yellow-600 bg-yellow-100';
       case 'rejected':
@@ -81,6 +83,8 @@ export default function SubmissionDetails() {
     switch (status) {
       case 'approved':
         return 'موافق عليه';
+      case 'confirmed':
+        return 'مؤكد';
       case 'pending':
         return 'في الانتظار';
       case 'rejected':
@@ -240,7 +244,7 @@ export default function SubmissionDetails() {
           )}
 
           {/* Food Ordering Section */}
-          {submission.status === 'approved' && (
+          {(submission.status === 'approved' || submission.status === 'confirmed') && (
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
