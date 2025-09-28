@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import EventLandingPage from "./pages/EventLandingPage";
 import InvestorLandingPage from "./pages/InvestorLandingPage";
 import Registration from "./pages/Registration";
+import WorkshopEventPage from "./pages/WorkshopEventPage";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/event" element={<EventLandingPage />} />
         <Route path="/investor" element={<InvestorLandingPage />} />
+        <Route path="/workshop-event" element={<WorkshopEventPage />} />
         <Route path="/" element={<Registration />} />
       </Routes>
     </Router>
