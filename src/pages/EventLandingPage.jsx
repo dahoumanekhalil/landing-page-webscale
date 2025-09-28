@@ -9,8 +9,6 @@ import AboutWebscale from "../components/sponsoring/AboutWebscale";
 import FeatureSection from "../components/sponsoring/FeatureSection";
 import HeroSection from "../components/sponsoring/HeroSection";
 import ImportanceSection from "../components/sponsoring/ImportanceSection";
-import RegistrationTitle from "../components/sponsoring/RegistrationTitle";
-import UnifiedRegistrationForm from "../components/sponsoring/UnifiedRegistrationForm";
 
 const EventLandingPage = () => {
   const [darkMode] = useState(false);
@@ -46,8 +44,29 @@ const EventLandingPage = () => {
         {/* <Agenda /> */}
         {/* <Sponsors /> */}
         <FeatureSection />
-        <RegistrationTitle />
-        <UnifiedRegistrationForm mode="inline" />
+        {/* Registration Closed Section */}
+        <section className="py-20 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-3xl p-12 md:p-16">
+              <div className="mb-8">
+                <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white text-3xl">🚫</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                  انتهت فترة التسجيل
+                </h2>
+                <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                  نشكركم على اهتمامكم بالملتقى. لقد انتهت فترة التسجيل وتم إغلاق باب المشاركة.
+                </p>
+                <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+                  <p className="text-lg text-gray-600 dark:text-gray-400">
+                    للمزيد من المعلومات حول الفعاليات القادمة، يرجى متابعة صفحتنا على وسائل التواصل الاجتماعي
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* <Footer /> */}
         <Footer
   resourcesLinks={eventResourcesLinks}

@@ -39,6 +39,18 @@ export const eventNav = {
   ],
 };
 
+export const workshopEventNav = {
+  links: [
+    { label: "الرئيسية", href: "#hero" },
+    { label: "عن الحدث", href: "#about" },
+    { label: "الورشات", href: "#workshops" },
+    { label: "لماذا تحضر؟", href: "#benefits" },
+  ],
+  actions: [
+    { label: "سجّل الآن", href: "#registration-form", type: "primary" },
+  ],
+};
+
 export const navItems = {
   Links: [
     { label: "الرئيسية", href: "#hero" },
