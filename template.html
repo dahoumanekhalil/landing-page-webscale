@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم قبول طلبك! هذه بطاقة حضورك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            direction: rtl;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .header {
+            background: linear-gradient(135deg, #f5bf00 0%, #fcecb3 100%);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .ministry-logos {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            
+
+        }
+        .ministry-logo {
+            height: 100px;
+            max-width: 120px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+            
+        }
+        .ministry-logo:hover {
+            opacity: 1;
+        }
+        .header h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .approval-badge {
+            background: #f5bf00;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .content {
+            padding: 40px 30px;
+            background: #ffffff;
+        }
+        .content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #374151;
+        }
+        .content p:first-child {
+            font-size: 18px;
+            font-weight: 500;
+            color: #f5bf00;
+        }
+        .event-details {
+            background: rgba(245, 191, 0, 0.1);
+            border: 1px solid rgba(245, 191, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-right: 4px solid #f5bf00;
+        }
+        .event-details h3 {
+            margin: 0 0 20px 0;
+            color: #f5bf00;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .event-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .event-details li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(245, 191, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        .event-details li:last-child {
+            border-bottom: none;
+        }
+        .event-details strong {
+            color: #f5bf00;
+            font-weight: 600;
+            min-width: 80px;
+            margin-left: 15px;
+        }
+        .event-details span {
+            color: #374151;
+            flex: 1;
+        }
+        .badge-section {
+            background: rgba(252, 236, 179, 0.3);
+            border: 1px solid rgba(245, 191, 0, 0.3);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: center;
+            border-right: 4px solid #f5bf00;
+        }
+        .badge-section h3 {
+            color: #f5bf00;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .qr-code-container {
+            background: #fefefe;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: inline-block;
+            border: 1px solid #f5f5f5;
+        }
+        /* START: New Sponsors Section Styles */
+        .sponsors-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(245, 191, 0, 0.2);
+            text-align: center;
+        }
+        .sponsors-section h4 {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sponsors-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .sponsor-logo {
+            max-height: 40px;
+            max-width: 100px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .sponsor-logo:hover {
+            opacity: 1;
+        }
+        /* END: New Sponsors Section Styles */
+        .footer {
+            background: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #f5f5f5;
+        }
+        .footer p {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 0;
+        }
+        .footer .brand {
+            color: #f5bf00;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .header {
+                padding: 20px 15px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .event-details, .badge-section {
+                padding: 20px 15px;
+            }
+            .sponsors-logos {
+                gap: 15px;
+            }
+            .sponsor-logo {
+                 max-height: 30px;
+                 max-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="ministry-logos">
+                <img src="https://www.webscale.dz/svg/djs_ministry.svg" alt="وزارة الشباب والرياضة" class="ministry-logo" />
+                <img src="https://www.webscale.dz/svg/startups_ministry.svg" alt="وزارة الاقتصاد المعرفي والاقتصاد الرقمي" class="ministry-logo" />
+            </div>
+            <div class="approval-badge">✓ PARTICIPANT</div>
+            <h1 style="margin-top: 40px;">مــــــــــلـتـــقـــــــــــــى WEBSCALE</h1>
+        </div>
+        <div class="content">
+            <p>عزيزي/عزيزتي {{first_name}}،</p>
+            <p>تم قبول طلبك لحضور <strong>{{event_name}}</strong> بنجاح!</p>
+            <div class="event-details">
+                <h3>📅 تفاصيل الحدث:</h3>
+                <ul>
+                    <li><strong>اسم الحدث:</strong> <span>{{event_name}}</span></li>
+                    <li><strong>التاريخ:</strong> <span>{{event_date}}</span></li>
+                    <li><strong>الوقت:</strong> <span>{{event_time}}</span></li>
+                    <li><strong>المكان:</strong> <span>{{event_location}}</span></li>
+                    <li><strong>رقم الطلب:</strong> <span>{{qr_code_id}}</span></li>
+                </ul>
+            </div>
+            <div class="badge-section">
+                <h3>🎫 بطاقة الحضور الرقمية</h3>
+                <p>هذه بطاقة حضورك الرقمية. يرجى الاحتفاظ بها وإحضارها معك في يوم الحدث.</p>
+                <div class="qr-code-container">
+                    {{qr_code_html}}
+                </div>
+                <p style="color: #6b7280; font-size: 14px; margin-top: 15px;">
+                    يمكن مسح هذا الكود عند وصولك للحدث
+                </p>
+
+                <div class="sponsors-section">
+                    <h4>برعاية</h4>
+                    <div class="sponsors-logos">
+                        <img src="https://webscale.dz/svg/sp_1.svg" alt="شعار الراعي 1" class="sponsor-logo" />
+                        <img src="https://webscale.dz/svg/sp_2.svg" alt="شعار الراعي 2" class="sponsor-logo" />
+                        <img src="https://webscale.dz/svg/sp_3.svg" alt="شعار الراعي 3" class="sponsor-logo" />
+                        <img src="https://webscale.dz/svg/sp_4.svg" alt="شعار الراعي 4" class="sponsor-logo" />
+                        <img src="https://webscale.dz/svg/sp_5.svg" alt="شعار الراعي 5" class="sponsor-logo" />
+                        <img src="https://webscale.dz/svg/sp_6.svg" alt="شعار الراعي 6" class="sponsor-logo" />
+                        </div>
+                </div>
+                </div>
+            <p>نتطلع لرؤيتك في الحدث!</p>
+        </div>
+        <div class="footer">
+            <p>مع أطيب التحيات،<br><span class="brand">فريق {{company_name}}</span><br>webscale.dz</p>
+        </div>
+    </div>
+</body>
+</html>
