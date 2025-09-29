@@ -6,16 +6,21 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
+const SCRIPT_URL = "https://crmgo.webscale.dz/api/v1/public/forms/72fd520f-7d5a-4f62-9c86-45f84bb320fd/submit";
+
 const WorkshopRegistrationForm = ({ workshops }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     businessType: "",
+    customBusinessType: "",
     selectedWorkshop: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showCustomBusinessType, setShowCustomBusinessType] = useState(false);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -24,25 +29,72 @@ const WorkshopRegistrationForm = ({ workshops }) => {
     }));
   };
 
+  const validatePhone = (phone) => {
+    const phonePattern = /^(\+213|0)(5|6|7)[0-9]{8}$/;
+    return phonePattern.test(phone);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage("");
+
+    // Validate phone number
+    if (!validatePhone(formData.phone)) {
+      setErrorMessage("رقم الهاتف غير صحيح. يجب أن يبدأ بـ +213 أو 0 ويتبع بـ 5، 6، أو 7");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      // Here you would typically send the data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitStatus('success');
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        businessType: "",
-        selectedWorkshop: ""
+      // Map form data to the required field structure
+      const payload = {
+        user_id: "public-user",
+        data: {
+          "الاسم الكامل": formData.fullName,
+          "البريد الإلكتروني": formData.email,
+          "رقم الهاتف": formData.phone,
+          "نوع النشاط": formData.businessType === "أخرى" ? formData.customBusinessType : formData.businessType,
+          "اختيار الورشة": formData.selectedWorkshop
+        }
+      };
+
+      const res = await fetch(SCRIPT_URL, { 
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
       });
+      
+      if (res.ok) {
+        setSubmitStatus('success');
+        setErrorMessage("");
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          businessType: "",
+          customBusinessType: "",
+          selectedWorkshop: ""
+        });
+        setShowCustomBusinessType(false);
+      } else {
+        try {
+          const errorData = await res.json();
+          if (errorData.error) {
+            setErrorMessage(errorData.error);
+          } else {
+            setErrorMessage("حدث خطأ أثناء الإرسال");
+          }
+        } catch {
+          setErrorMessage("حدث خطأ أثناء الإرسال");
+        }
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      setErrorMessage("حدث خطأ في الاتصال بالخادم");
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -114,18 +166,37 @@ const WorkshopRegistrationForm = ({ workshops }) => {
               <Label htmlFor="businessType" className="text-gray-700 dark:text-gray-300 font-medium">
                 نوع النشاط (اختياري)
               </Label>
-              <Select value={formData.businessType} onValueChange={(value) => handleInputChange('businessType', value)}>
+              <Select 
+                value={formData.businessType} 
+                onValueChange={(value) => {
+                  handleInputChange('businessType', value);
+                  setShowCustomBusinessType(value === "أخرى");
+                }}
+              >
                 <SelectTrigger className="h-12">
                   <SelectValue placeholder="اختر نوع نشاطك" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="ecommerce">تجارة إلكترونية</SelectItem>
-                  <SelectItem value="retail">تجارة تقليدية</SelectItem>
-                  <SelectItem value="services">خدمات</SelectItem>
-                  <SelectItem value="consulting">استشارات</SelectItem>
-                  <SelectItem value="other">أخرى</SelectItem>
+                  <SelectItem value="تجارة إلكترونية">تجارة إلكترونية</SelectItem>
+                  <SelectItem value="تجارة تقليدية">تجارة تقليدية</SelectItem>
+                  <SelectItem value="خدمات">خدمات</SelectItem>
+                  <SelectItem value="استشارات">استشارات</SelectItem>
+                  <SelectItem value="أخرى">أخرى</SelectItem>
                 </SelectContent>
               </Select>
+              
+              {showCustomBusinessType && (
+                <div className="mt-2">
+                  <Input
+                    type="text"
+                    value={formData.customBusinessType}
+                    onChange={(e) => handleInputChange('customBusinessType', e.target.value)}
+                    placeholder="أدخل نوع النشاط"
+                    className="h-12 text-right"
+                    dir="rtl"
+                  />
+                </div>
+              )}
             </div>
 
             {/* Workshop Selection */}
@@ -138,14 +209,9 @@ const WorkshopRegistrationForm = ({ workshops }) => {
                   <SelectValue placeholder="اختر الورشة التي تود حضورها" />
                 </SelectTrigger>
                 <SelectContent>
-                  {workshops.map((workshop) => (
-                    <SelectItem key={workshop.id} value={workshop.id}>
-                      <div className="flex flex-col items-start">
-                        <span className="font-semibold">{workshop.name}</span>
-                        <span className="text-sm text-gray-500">{workshop.description}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
+                  <SelectItem value="Jumia">Jumia</SelectItem>
+                  <SelectItem value="العربي محمد هوامل">العربي محمد هوامل</SelectItem>
+                  <SelectItem value="راسلام">راسلام</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -177,10 +243,10 @@ const WorkshopRegistrationForm = ({ workshops }) => {
               </div>
             )}
 
-            {submitStatus === 'error' && (
+            {(submitStatus === 'error' || errorMessage) && (
               <div className="mt-4 p-4 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg">
                 <p className="text-red-800 dark:text-red-200 text-center font-medium">
-                  ❌ حدث خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى.
+                  ❌ {errorMessage || "حدث خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى."}
                 </p>
               </div>
             )}
