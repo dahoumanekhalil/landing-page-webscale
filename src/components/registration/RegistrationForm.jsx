@@ -332,7 +332,7 @@ export default function RegistrationForm() {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {/* زر تعبئة تلقائية للتجربة */}
-          <div className="md:col-span-2 flex justify-end order-first">
+          <div className="md:col-span-2 justify-end order-first hidden">
             <button
               type="button"
               onClick={fillMockData}
