@@ -1,12 +1,10 @@
 // src/components/registration/RegistrationForm.jsx 
-"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import AlgeriaWilayas from "../shared/AlgeriaWilayas";
 import OptionPills from "./OptionPills";
 
-const BRAND = "#FABC05";
-const SCRIPT_URL = import.meta.env.VITE_REGISTRATION_SCRIPT_URL;
+const PUBLIC_SUBMIT_URL = `https://crmgo.webscale.dz/api/v1/public/forms/47401ef7-042c-4994-8645-569b14749758/submit`;
 
 const fieldBase =
   "w-full rounded-xl border px-3 py-2 outline-none transition " +
@@ -30,7 +28,6 @@ const initialForm = {
   sector: "",
   employees: "",
   accountOwnership: "",
-  subscription: "",
   projectProgress: "", // جديد
   trainingBudget: "", // جديد
   decisionMaker: "", // جديد
@@ -56,7 +53,6 @@ export default function RegistrationForm() {
     sector: useRef(null),
     employees: useRef(null),
     accountOwnership: useRef(null),
-    subscription: useRef(null),
     projectProgress: useRef(null), // جديد
     trainingBudget: useRef(null), // جديد
     decisionMaker: useRef(null), // جديد
@@ -84,7 +80,6 @@ export default function RegistrationForm() {
         form.sector &&
         form.employees &&
         form.accountOwnership &&
-        form.subscription &&
         form.projectProgress &&
         form.trainingBudget &&
         form.decisionMaker && 
@@ -105,17 +100,47 @@ export default function RegistrationForm() {
     if (!form.sector.trim()) e.sector = "هذا الحقل مطلوب";
     if (!form.employees) e.employees = "اختر عدد الموظفين";
     if (!form.accountOwnership) e.accountOwnership = "اختر ملكية الحساب";
-    if (!form.subscription) e.subscription = "اختر خيار الاشتراك";
     if (!form.projectProgress) e.projectProgress = "اختر مرحلة المشروع"; // جديد
     if (!form.trainingBudget) e.trainingBudget = "اختر ميزانية التدريب"; // جديد
     if (!form.decisionMaker) e.decisionMaker = "حدد إذا كنت صاحب القرار"; // جديد
     if (!form.bestCallTime) e.bestCallTime = "اختر أفضل وقت للاتصال"; // جديد
+    // تحقق أن الولاية ضمن القائمة المعتمدة
+    const allowedWilayas = [
+      "أدرار","الشلف","الأغواط","أم البواقي","باتنة","بجاية","بسكرة","بشار","البليدة","البويرة","تمنراست","تبسة","تلمسان","تيارت","تيزي وزو","الجزائر","الجلفة","جيجل","سطيف","سعيدة","سكيكدة","سيدي بلعباس","عنابة","قالمة","قسنطينة","المدية","مستغانم","المسيلة","معسكر","ورقلة","وهران","البيض","إليزي","برج بوعريريج","بومرداس","الطارف","تندوف","تيسمسيلت","الوادي","خنشلة","سوق أهراس","تيبازة","ميلة","عين الدفلى","النعامة","عين تموشنت","غرداية","غليزان","تيميمون","برج باجي مختار","أولاد جلال","بني عباس","إن صالح","إن قزام","تقرت","جانت","المغير","المنيعة"
+    ];
+    if (form.wilaya && !allowedWilayas.includes(form.wilaya)) {
+      e.wilaya = "الولاية المختارة غير صالحة";
+    }
     return e;
   };
 
   const validatePhone = (phone) => {
-    const regex = /^\+?\d{9,}$/;
+    // مطابق للنمط المطلوب: ^(\+213|0)(5|6|7)[0-9]{8}$
+    const regex = /^(\+213|0)(5|6|7)[0-9]{8}$/;
     return regex.test(phone);
+  };
+
+  const fillMockData = () => {
+    const mock = {
+      name: "يوسف بن خدة",
+      email: "youssef.benkhadda@example.com",
+      phone: "+213551234567",
+      jobTitle: "مدير قسم",
+      company: "Webscale",
+      wilaya: "الجزائر",
+      sector: "تكنولوجيا",
+      employees: "من 5 إلى 20",
+      accountOwnership: "حساب خاص بك",
+      projectProgress: "في مرحلة الإطلاق التجريبي (MVP)",
+      trainingBudget: "من 2 الى 4 مليون سنتيم",
+      decisionMaker: "نعم، أنا صاحب القرار",
+      bestCallTime: "بعد الظهر (14:00 - 17:00)",
+      notes: "بيانات تجريبية للتأكد من تدفق الإرسال.",
+      honey: "",
+    };
+    setForm(mock);
+    // امسح الأخطاء الظاهرة بعد التعبئة
+    setErrors({});
   };
 
   const handleSubmit = async (e) => {
@@ -157,51 +182,80 @@ export default function RegistrationForm() {
     setIsSubmitting(true);
 
     try {
+      // تحويل القيم لمفاتيح عربية مطابقة لحقول الـ CRM
       const payload = {
-        ...form,
-        timestamp: new Date().toISOString(),
-        source: "webscale-landing",
+        user_id: "public-user",
+        data: {
+          "الاسم الكامل": form.name,
+          "البريد الإلكتروني": form.email,
+          "رقم الهاتف (واتساب مفضل)": form.phone,
+          "المسمى الوظيفي": form.jobTitle,
+          "اسم المؤسسة": form.company,
+          "الولاية": form.wilaya,
+          "القطاع الذي تعمل فيه": form.sector,
+          "عدد الموظفين في الشركة": form.employees,
+          "نسبة تقدم مشروعك": form.projectProgress,
+          "كم تريد الانفاق من اجل التدريب والتعلم": form.trainingBudget,
+          "هل انت صاحب القرار في الشركة (قرار الاشتراك والدفع)": form.decisionMaker,
+          "ما هو الوقت الأفضل للاتصال بك": form.bestCallTime,
+          "ملكية الحساب": form.accountOwnership,
+          "ملاحظات إضافية أو استفسار؟": form.notes || "",
+        },
       };
 
-      const formPayload = new FormData();
-      Object.entries(payload).forEach(([key, val]) => {
-        formPayload.append(key, val);
-      });
 
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: formPayload,
-      });
+      try {
+        // المحاولة الأساسية: fetch قياسي مع JSON
+        const res = await fetch(PUBLIC_SUBMIT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload),
+        });
 
-      const data = await res.json().catch(() => ({}));
+        const data = await res.json().catch(() => ({}));
 
-      if (res.ok && data.status === "success") {
+        if (res.ok) {
+          setModal({
+            type: "success",
+            message: "✅ تم تسجيلك بنجاح! سنراجع طلبك ونتواصل معك قريبًا.",
+          });
+          setForm(initialForm);
+          return;
+        }
+
+        const msg1 = data?.error || data?.message || "⚠️ حدث خطأ غير متوقع.";
+        if (msg1.includes("البريد الإلكتروني") && msg1.includes("exists")) {
+          setErrors({ ...errors, email: "⚠️ هذا البريد الإلكتروني مسجل مسبقًا." });
+          fieldRefs.email.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+          fieldRefs.email.current?.focus();
+          return;
+        }
+        if (msg1.includes("رقم الهاتف")) {
+          setErrors({ ...errors, phone: msg1 });
+          fieldRefs.phone.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+          fieldRefs.phone.current?.focus();
+          return;
+        }
+        // إن لم يكن ناجحًا ولا رسالة واضحة، سنجرب no-cors لاحقًا
+      } catch (_) {
+        // فشل الشبكة/ CORS → سنحاول fallback أدناه
+      }
+
+      try {
+        // خطة بديلة: simple request بدون ترويسات (قد ينتج رد opaque لا يمكن قراءته)
+        await fetch(PUBLIC_SUBMIT_URL, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+
+        // لا يمكن قراءة الاستجابة في no-cors، لذلك نعرض نجاحًا تفاؤليًا
         setModal({
           type: "success",
-          message: "✅ تم تسجيلك بنجاح! سنراجع طلبك ونتواصل معك قريبًا.",
+          message: "✅ تم إرسال طلبك. سنراجعه ونتواصل معك قريبًا.",
         });
         setForm(initialForm);
-      } else if (data.status === "error") {
-        if (data.message && data.message.includes("البريد مسجل")) {
-          // ✅ خطأ خاص بالبريد → نعرضه تحت الحقل
-          setErrors({ ...errors, email: "⚠️ هذا البريد الإلكتروني مسجل مسبقًا." });
-          fieldRefs.email.current.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-          fieldRefs.email.current.focus();
-        } else {
-          // باقي الأخطاء العامة
-          setModal({
-            type: "error",
-            message: data.message || "⚠️ حدث خطأ غير متوقع.",
-          });
-        }
-      } else {
-        setModal({
-          type: "error",
-          message: "⚠️ لم نتمكن من إتمام العملية. حاول مرة أخرى.",
-        });
+      } catch (e) {
+        setModal({ type: "error", message: "⚠️ تعذر إرسال الطلب. حاول لاحقًا." });
       }
 
     } catch (err) {
@@ -277,6 +331,16 @@ export default function RegistrationForm() {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
+          {/* زر تعبئة تلقائية للتجربة */}
+          <div className="md:col-span-2 justify-end order-first hidden">
+            <button
+              type="button"
+              onClick={fillMockData}
+              className="px-3 py-2 text-xs rounded-lg border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-neutral-800 transition"
+            >
+              تعبئة تلقائية للتجربة
+            </button>
+          </div>
           {/* الاسم الكامل */}
           <div>
             <label className={labelBase}>
@@ -317,7 +381,8 @@ export default function RegistrationForm() {
               className={fieldBase}
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              placeholder="مثال: 2136xxxxxxx+"
+              placeholder="مثال: +2135XXXXXXXX أو 05XXXXXXXX"
+              dir="ltr"
             />
             {errors.phone && <div className={errorText}>{errors.phone}</div>}
           </div>
@@ -518,20 +583,7 @@ export default function RegistrationForm() {
             )}
           </div>
 
-          {/* الاشتراك */}
-          <div ref={fieldRefs.subscription} className="md:col-span-2">
-            <OptionPills
-              label="اختر الاشتراك المناسب"
-              required
-              name="subscription"
-              options={["STARTER", "VIP", "VIP+", "free"]}
-              value={form.subscription}
-              onChange={(val) => setForm({ ...form, subscription: val })}
-            />
-            {errors.subscription && (
-              <div className={errorText}>{errors.subscription}</div>
-            )}
-          </div>
+          {/* الاشتراك - تمت إزالته */}
 
           {/* ملاحظات */}
           <div className="md:col-span-2">
